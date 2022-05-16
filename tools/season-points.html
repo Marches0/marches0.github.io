@@ -127,6 +127,7 @@
 
       $("#season-event").on("change", function(e){
         loadEvent(this.value);
+        processCurrencyUsed(Number($("#currency-used").val()));
       });
 
       $("#currency-used").on("change", function(e){
@@ -195,7 +196,6 @@
       };
 
       function loadChart() {
-        console.warn("lc");
         if(eventChart) {
           eventChart.destroy();
         }
