@@ -16,263 +16,259 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js" integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js" integrity="sha512-HrwQrg8S/xLPE6Qwe7XOghA/FOxX+tuVF4TxbvS73/zKJSs/b1gVl/P4MsdfTFWYFYg/ISVNYIINcg35Xvr6QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
-  
-  <body>
-    <main class="fill">
-      <div id="sidebar-placeholder">
 
-      </div>
-      
-      <div class="container-fluid fill" style="overflow-y: scroll">
-        <nav class="navbar navbar-expand navbar-light bg-light">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar-offcanvas" aria-controls="sidebar-offcanvas">
-                  <i class="bi bi-list"></i>
-                </button>
-              </li>
-            </ul>
-            <span class="navbar-brand mb-0 h1">Made with 💜 by Marches</span>
-          </div>
-        </nav>
+  <body style="overflow-y: scroll">
+    
+    <div class="row row-main">
+        <div class="col-md-1" id="sidebar-placeholder">
 
-        <div class="row mt-5 mb-5 text-start">
-          <div class="col-md-8 offset-md-2">
+        </div>
 
-            <div class="card shadow">
-              <div class="card-body">
-                <h2 class="card-title">Season Points Calculator</h2>
-                <div class="mb-3">
-                    <div class="form-group">
-                        <label for="season-event">Event</label>
-                        <select class="form-control" id="season-event">
-                            <option selected disabled>Event</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="event-parameters" style="display: none;">
-                    <div class="form-group">
-                        <label for="currency-used" id="season-currency-label"></label>
-                        <input type="number" class="form-control" id="currency-used">
-                      </div>
-                    <div class="form-group mt-3">
-                        <div class="row">
-
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Last tier</h5>
-                                    <p id="last-tier-currency"></p>
-                                    <p id="last-tier-points" style="margin: 0px;"></p>
+        <div class="col-md-11">
+            <div class="container-fluid fill">
+                
+                <div class="row text-start">
+                    <div class="col-md-9 offset-md-1">
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                              <h2 class="card-title">Season Points Calculator</h2>
+                              <div class="mb-3">
+                                  <div class="form-group">
+                                      <label for="season-event">Event</label>
+                                      <select class="form-control" id="season-event">
+                                          <option selected disabled>Event</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div id="event-parameters" style="display: none;">
+                                  <div class="form-group">
+                                      <label for="currency-used" id="season-currency-label"></label>
+                                      <input type="number" class="form-control" id="currency-used">
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card shadow-sm">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Your points</h5>
-                                    <p id="your-points-currency"></p>
-                                    <p id="your-points-points" style="margin: 0px;"></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                    <h5 class="card-title">Next tier</h5>
-                                    <p id="next-tier-currency"></p>
-                                    <p id="next-tier-points" style="margin: 0px;"></p>
-                                    </div>
-                                </div>
+                                  <div class="form-group mt-3">
+                                      <div class="row">
+              
+                                          <div class="col-md-4">
+                                              <div class="card">
+                                                  <div class="card-body">
+                                                  <h5 class="card-title">Last tier</h5>
+                                                  <p id="last-tier-currency"></p>
+                                                  <p id="last-tier-points" style="margin: 0px;"></p>
+                                                  </div>
+                                              </div>
+                                          </div>
+              
+                                          <div class="col-md-4">
+                                              <div class="card shadow-sm">
+                                                  <div class="card-body">
+                                                  <h5 class="card-title">Your points</h5>
+                                                  <p id="your-points-currency"></p>
+                                                  <p id="your-points-points" style="margin: 0px;"></p>
+                                                  </div>
+                                              </div>
+                                          </div>
+              
+                                          <div class="col-md-4">
+                                              <div class="card">
+                                                  <div class="card-body">
+                                                  <h5 class="card-title">Next tier</h5>
+                                                  <p id="next-tier-currency"></p>
+                                                  <p id="next-tier-points" style="margin: 0px;"></p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+              
+                              <canvas id="event-efficiency-chart"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <canvas id="event-efficiency-chart"></canvas>
-              </div>
             </div>
-
-          </div>
         </div>
+    </div>
+  </body>
 
-      </div>
-    </main>
+  <script>
+    $(document).ready(function() {
+        // Load shared sidebar
+        $("#sidebar-placeholder").load("/sidebar.html", function() {
+          
+        });
+    });
+    </script>
 
     <script>
-        var seasonEvents;
-        var selectedEvent;
-        var eventChart;
+      var seasonEvents;
+      var selectedEvent;
+      var eventChart;
 
-      $(document).ready(function() {
-        // Load shared sidebar
-        $("#sidebar-placeholder").load("/sidebar.html");
-        
-        // Calculator stuff
-        
-        $.getJSON("/tools/data/seasonpoints.json", function(data) {
-            seasonEvents = data.events;
-            /*
-            [
-                {
-                    "name": "Penglai",
-                    "seasonCurrency": "Stamina",
-                    "seasonPoints":[
-                        [0, 0],
-                        [45, 2000],
-                        [currency, seasonPoints]
-                    ]
-                }
-            ]
-            */
+    $(document).ready(function() {      
+      // Calculator stuff
+      
+      $.getJSON("/tools/data/seasonpoints.json", function(data) {
+          seasonEvents = data.events;
+          /*
+          [
+              {
+                  "name": "Penglai",
+                  "seasonCurrency": "Stamina",
+                  "seasonPoints":[
+                      [0, 0],
+                      [45, 2000],
+                      [currency, seasonPoints]
+                  ]
+              }
+          ]
+          */
 
-            // Sort out the select list.
-            let seasonEventList =  $("#season-event");
-            seasonEvents.map(se => se.name).sort().forEach(eventName => {
-                seasonEventList.append("<option>" + eventName + "</option>")
-            });
-        });
-        
+          // Sort out the select list.
+          let seasonEventList =  $("#season-event");
+          seasonEvents.map(se => se.name).sort().forEach(eventName => {
+              seasonEventList.append("<option>" + eventName + "</option>")
+          });
       });
+      
+    });
 
-      $("#season-event").on("change", function(e){
-        loadEvent(this.value);
-        processCurrencyUsed(Number($("#currency-used").val()));
-      });
+    $("#season-event").on("change", function(e){
+      loadEvent(this.value);
+      processCurrencyUsed(Number($("#currency-used").val()));
+    });
 
-      $("#currency-used").on("change", function(e){
-        processCurrencyUsed(Number(this.value));
-      });
+    $("#currency-used").on("change", function(e){
+      processCurrencyUsed(Number(this.value));
+    });
 
-      function loadEvent(name){
-        selectedEvent = seasonEvents.filter(s => s.name == name)[0];
+    function loadEvent(name){
+      selectedEvent = seasonEvents.filter(s => s.name == name)[0];
 
-        $("#season-currency-label").text(selectedEvent.seasonCurrency);
-        $("#event-parameters").show();
+      $("#season-currency-label").text(selectedEvent.seasonCurrency);
+      $("#event-parameters").show();
 
-        // Set chart
-        loadChart();
-      };
+      // Set chart
+      loadChart();
+    };
 
-      function processCurrencyUsed(used) {
-        setSeasonPointsEarnt(used);
-        setLastTier(used);
-        setNextTier(used);
-      };
+    function processCurrencyUsed(used) {
+      setSeasonPointsEarnt(used);
+      setLastTier(used);
+      setNextTier(used);
+    };
 
-      function setSeasonPointsEarnt(used){
-        let seasonPoints = selectedEvent.seasonPoints
-            .filter(s => s[0] <= used)
-            .reduce((total, tier) => total + tier[1], 0);
+    function setSeasonPointsEarnt(used){
+      let seasonPoints = selectedEvent.seasonPoints
+          .filter(s => s[0] <= used)
+          .reduce((total, tier) => total + tier[1], 0);
 
-        setCurrencyText("your-points-currency", used);
-        $("#your-points-points").text("Total Season Points: " + seasonPoints.toLocaleString());
+      setCurrencyText("your-points-currency", used);
+      $("#your-points-points").text("Total Season Points: " + seasonPoints.toLocaleString());
+    }
+
+    function setLastTier(used) {
+      let seasonTiersReached = selectedEvent.seasonPoints
+          .filter(s => s[0] <= used)
+          .sort(function(a, b){return a - b}); // I hate JS
+
+      if (seasonTiersReached.length) {
+        let lastTier = seasonTiersReached[seasonTiersReached.length - 1];
+        setCurrencyText("last-tier-currency", lastTier[0]);
+        setPointsText("last-tier-points", lastTier[1]);
+      }
+    };
+
+    function setNextTier(used) {
+      let seasonTiersMissed = selectedEvent.seasonPoints
+          .filter(s => s[0] > used)
+          .sort(function(a, b){return a - b}); // I hate JS
+
+      if (seasonTiersMissed.length) {
+        let firstTier = seasonTiersMissed[0];
+        setCurrencyText("next-tier-currency", firstTier[0]);
+        setPointsText("next-tier-points", firstTier[1]);
+      }
+      else {
+        $("#next-tier-currency").text("Unknown");
+        $("#next-tier-points").text("Unknown");
+      }
+    };
+
+    function setCurrencyText(elementName, used) {
+      $("#" + elementName).text(selectedEvent.seasonCurrency + ": " + used.toLocaleString());
+    };
+
+    function setPointsText(elementName, seasonPoints){
+      $("#" + elementName).text("Season Points: " + seasonPoints.toLocaleString());
+    };
+
+    function loadChart() {
+      if(eventChart) {
+        eventChart.destroy();
       }
 
-      function setLastTier(used) {
-        let seasonTiersReached = selectedEvent.seasonPoints
-            .filter(s => s[0] <= used)
-            .sort(function(a, b){return a - b}); // I hate JS
+      // y = efficiency @ currency
+      // x = total currency
+      let data = [];
 
-        if (seasonTiersReached.length) {
-          let lastTier = seasonTiersReached[seasonTiersReached.length - 1];
-          setCurrencyText("last-tier-currency", lastTier[0]);
-          setPointsText("last-tier-points", lastTier[1]);
+      let totalScore = 0;
+      selectedEvent.seasonPoints.forEach(tier => {
+        // [0] = currency for this tier
+        // [1] = season points for this tier
+        if (tier[0] !== 0){
+          totalScore += tier[1];
+
+          data.push({
+            x: tier[0],
+            y: totalScore / tier[0]
+          });
         }
-      };
+      });
 
-      function setNextTier(used) {
-        let seasonTiersMissed = selectedEvent.seasonPoints
-            .filter(s => s[0] > used)
-            .sort(function(a, b){return a - b}); // I hate JS
+      let chartElement = document.getElementById('event-efficiency-chart').getContext('2d');
+      chartElement.canvas.width = 100;
+      chartElement.canvas.height = 50;
 
-        if (seasonTiersMissed.length) {
-          let firstTier = seasonTiersMissed[0];
-          setCurrencyText("next-tier-currency", firstTier[0]);
-          setPointsText("next-tier-points", firstTier[1]);
-        }
-        else {
-          $("#next-tier-currency").text("Unknown");
-          $("#next-tier-points").text("Unknown");
-        }
-      };
-
-      function setCurrencyText(elementName, used) {
-        $("#" + elementName).text(selectedEvent.seasonCurrency + ": " + used.toLocaleString());
-      };
-
-      function setPointsText(elementName, seasonPoints){
-        $("#" + elementName).text("Season Points: " + seasonPoints.toLocaleString());
-      };
-
-      function loadChart() {
-        if(eventChart) {
-          eventChart.destroy();
-        }
-
-        // y = efficiency @ currency
-        // x = total currency
-        let data = [];
-
-        let totalScore = 0;
-        selectedEvent.seasonPoints.forEach(tier => {
-          // [0] = currency for this tier
-          // [1] = season points for this tier
-          if (tier[0] !== 0){
-            totalScore += tier[1];
-
-            data.push({
-              x: tier[0],
-              y: totalScore / tier[0]
-            });
-          }
-        });
-
-        let chartElement = document.getElementById('event-efficiency-chart').getContext('2d');
-        chartElement.canvas.width = 100;
-        chartElement.canvas.height = 50;
-
-        eventChart = new Chart(chartElement,
-        {
-          type: "line",
-          data: {
-            labels: data.map(d => d.x.toLocaleString()),
-            datasets: [{
-              label: "Efficiency",
-              data: data,
-              fill: false,
-              borderColor: 'rgb(75, 192, 192)',
-              tension: 0.001
-            }]
-          },
-          options: {
-            scales: {
-                x: {
-                  title:{
-                    display: true,
-                    text: selectedEvent.seasonCurrency
-                  },
-                  grid: {
-                    display: false
-                  }
+      eventChart = new Chart(chartElement,
+      {
+        type: "line",
+        data: {
+          labels: data.map(d => d.x.toLocaleString()),
+          datasets: [{
+            label: "Efficiency",
+            data: data,
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.001
+          }]
+        },
+        options: {
+          scales: {
+              x: {
+                title:{
+                  display: true,
+                  text: selectedEvent.seasonCurrency
                 },
-                y: {
-                  title:{
-                    display: true,
-                    text: "Total Season Points per " + selectedEvent.seasonCurrency
-                  },
-                  grid: {
-                    display: false
-                  }
+                grid: {
+                  display: false
                 }
-            }
-         } 
-        }
-        );
+              },
+              y: {
+                title:{
+                  display: true,
+                  text: "Total Season Points per " + selectedEvent.seasonCurrency
+                },
+                grid: {
+                  display: false
+                }
+              }
+          }
+       } 
       }
-      </script>
-  </body>
+      );
+    }
+    </script>
+
 </html>
