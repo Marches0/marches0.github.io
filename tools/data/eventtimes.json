@@ -11,7 +11,9 @@
             "events": [
                 "Sea Fishing starts",
                 "Alliance Carnival starts",
-                "Most minigames start (fill this out later)"
+                "Elite Drill starts",
+                "Jade for Beauty starts",
+                "Imperial Feast starts"
             ]
         },
         {
@@ -19,7 +21,14 @@
             "events": [
                 "Penglai Island Domination starts",
                 "Naadam Fair starts",
-                "Most events start (fill this out later)"
+                "Palace Green Ware starts",
+                "Mohist Maze starts",
+                "Loulan Dominion starts",
+                "Loulan Siege starts",
+                "Go Match starts",
+                "Scholar's Debate starts",
+                "Sovereign Clash starts",
+                "Relic Domination starts"
             ]
         },
         {
@@ -30,11 +39,19 @@
             ]
         },
         {
+            "serverTime": "11:05",
+            "events": [
+                "Great Auction House opens"
+            ]
+        },
+        {
             "serverTime": "21:00",
             "events": [
                 "Sea Fishing ends",
                 "Alliance Carnival ends",
-                "Most minigames end (fill this out later)"
+                "Elite Drill ends",
+                "Jade for Beauty ends",
+                "Imperial Feast ends"
             ]
         },
         {
@@ -42,7 +59,14 @@
             "events": [
                 "Penglai Island Domination ends",
                 "Naadam Fair ends",
-                "Most events end (fill this out later)"
+                "Relic Domination ends",
+                "Most events end (fill this out later, can't remember and some are different)"
+            ]
+        },
+        {
+            "serverTime": "22:30",
+            "events": [
+                "Siege ends"
             ]
         },
         {
