@@ -81,6 +81,7 @@
     <script>
     const timeFormat = "HH:mm:ss";
     const shortFormat = "HH:mm";
+    const jsonFormatTz = "HH:mmZ";
     const serverTimeOffset = 60;
     var timings;
 
@@ -128,13 +129,13 @@
 
             let userTimezone = luxon.Settings.defaultZoneName;
             let userEventTime = luxon.DateTime
-                .fromFormat(timing.serverTime, shortFormat)
+                .fromFormat(timing.serverTime + "+1", jsonFormatTz) // make sure the server +1 is accounted for
                 .setZone(userTimezone);
 
             row += getTd(timing.serverTime);
             row += getTd(userEventTime.toFormat(shortFormat));
             row += getTd(getEvents(timing));
-            row += getTd("to do");
+            row += getTd(getTimeUntil(userEventTime));
 
             row += rowEnd
 
@@ -155,6 +156,48 @@
         });
 
         return eventsHtml;
+    }
+
+    function getTimeUntil(localEventTime) {
+        // Hopefully using the user time means it'll take DST shifts into account
+        // nvm, those don't matter. too late, the code is local.
+        let currentUserTime = luxon.DateTime.local();
+        let until = localEventTime.diff(currentUserTime, ["hours", "minutes"]);
+
+        // Negative means it's already happened today, so we need to check tomorrow.
+
+        if (until.toMillis() < 0) {
+            let eventTomorrow = localEventTime.plus(luxon.Duration.fromObject({
+                days: 1
+            }));
+            until = eventTomorrow.diff(currentUserTime, ["hours", "minutes"]);
+        }
+
+        let friendlyText = "";
+
+        if (until.hours > 0) {
+            if (until.hours === 1) {
+                friendlyText += "1 hour";
+            }
+            else {
+                friendlyText += until.hours + " hours";
+            }
+        }
+
+        if (until.minutes > 0) {
+            if (friendlyText.length){
+                friendlyText += ", ";
+            }
+
+            if (until.minutes === 1) {
+                friendlyText += "1 minute";
+            }
+            else {
+                friendlyText += Math.round(until.minutes) + " minutes";
+            }
+        }
+
+        return friendlyText;
     }
     </script>
 
