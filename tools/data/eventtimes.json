@@ -1,0 +1,55 @@
+{
+    "timings": [
+        {
+            "serverTime": "00:00",
+            "events": [
+                "Daily reset"
+            ]
+        },
+        {
+            "serverTime": "09:00",
+            "events": [
+                "Sea Fishing starts",
+                "Alliance Carnival starts",
+                "Most minigames start (fill this out later)"
+            ]
+        },
+        {
+            "serverTime": "10:00",
+            "events": [
+                "Penglai Island Domination starts",
+                "Naadam Fair starts",
+                "Most events start (fill this out later)"
+            ]
+        },
+        {
+            "serverTime": "11:00",
+            "events": [
+                "Palace Cuju starts",
+                "Siege starts"
+            ]
+        },
+        {
+            "serverTime": "21:00",
+            "events": [
+                "Sea Fishing ends",
+                "Alliance Carnival ends",
+                "Most minigames end (fill this out later)"
+            ]
+        },
+        {
+            "serverTime": "21:30",
+            "events": [
+                "Penglai Island Domination ends",
+                "Naadam Fair ends",
+                "Most events end (fill this out later)"
+            ]
+        },
+        {
+            "serverTime": "23:00",
+            "events": [
+                "Boost events end"
+            ]
+        }
+    ]
+}
