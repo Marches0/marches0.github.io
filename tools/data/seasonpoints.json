@@ -2,6 +2,7 @@
     "events": [
         {
             "name": "Penglai Island Domination",
+            "colour": "#fff2cc",
             "seasonCurrency": "Stamina",
             "seasonPoints": [
                 [
@@ -308,6 +309,7 @@
         },
         {
             "name": "Mohist Maze",
+            "colour": "#9fc5e8",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -594,6 +596,7 @@
         },
         {
             "name": "Palace Cuju",
+            "colour": "#dd7e6b",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -1032,6 +1035,7 @@
         },
         {
             "name": "Intimacy",
+            "colour": "#ea9999",
             "seasonCurrency": "Experience",
             "seasonPoints": [
                 [
@@ -1178,6 +1182,7 @@
         },
         {
             "name": "Jade for Beauty",
+            "colour": "#f4cccc",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -1436,6 +1441,7 @@
         },
         {
             "name": "Savvy",
+            "colour": "#6fa8dc",
             "seasonCurrency": "Savvy",
             "seasonPoints": [
                 [
@@ -1734,6 +1740,7 @@
         },
         {
             "name": "Siege",
+            "colour": "#BB604B",
             "seasonCurrency": "Stamina",
             "seasonPoints": [
                 [
@@ -1992,6 +1999,7 @@
         },
         {
             "name": "Elite Drill",
+            "colour": "#CC5846",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -2254,6 +2262,7 @@
         },
         {
             "name": "Power",
+            "colour": "#BC4C4A",
             "seasonCurrency": "Fruit",
             "seasonPoints": [
                 [
