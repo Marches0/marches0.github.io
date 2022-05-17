@@ -6,11 +6,11 @@
                 <a class="btn btn-toggle btn-toggle-notreally link-dark rounded" role="button" href="/" class="">Tips</a>
             </li>
             <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+                <button id="guides-btn" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#guides-collapse">
                     Guides
                 </button>
                 <div class="collapse" id="guides-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" id="tips-nav-list">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/guides/curiosity.html" class="link-dark rounded">Curiosity</a></li>
                         <li><a href="" class="link-dark rounded">Where do Red Burrs appear?</a></li>
                         <li><a href="" class="link-dark rounded">Powering to beat another player</a></li>
@@ -18,11 +18,11 @@
                 </div>
             </li>
             <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tools-collapse" aria-expanded="false">
+                <button id="tools-btn" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tools-collapse">
                     Tools
                 </button>
                 <div class="collapse" id="tools-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" id="tips-nav-list">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/tools/season-points.html" class="link-dark rounded">Season Points Calculator</a></li>
                     </ul>
                 </div>
@@ -31,3 +31,14 @@
 
     </div>
 </div>
+
+<script>
+    // Expand the appropriate group based on the area we are in.
+    let area = window.location.pathname
+        .split("/")[1];
+
+    if (area !== undefined){
+        $("#" + area + "-btn").attr("aria-expanded", true);
+        $("#" + area + "-collapse").addClass("show");        
+    }
+</script>
