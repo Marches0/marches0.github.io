@@ -165,12 +165,13 @@
       loadChart();
 
       // Reset tier entries
-      $("#next-tier-currency").text("");
-      $("#next-tier-points").text("");
-      $("#last-tier-currency").text("");
-      $("#last-tier-points").text("");
-      $("#your-points-currency").text("");
-      $("#your-points-points").text("");
+      setCurrencyText("last-tier-currency");
+      setPointsText("last-tier-points");
+      setCurrencyText("next-tier-currency");
+      setPointsText("next-tier-points");
+      setCurrencyText("your-points-currency");
+      //$("#your-points-currency").text(""); // definitely duplcating code now
+      $("#your-points-points").text("Total Season Points:");
     };
 
     function processCurrencyUsed(used) {
@@ -197,6 +198,12 @@
         let lastTier = seasonTiersReached[seasonTiersReached.length - 1];
         setCurrencyText("last-tier-currency", lastTier[0]);
         setPointsText("last-tier-points", lastTier[1]);
+
+        // Annotation seems to use x axis as nth entry,
+        // rather than n along (e.g. annotate the 30th point, rather than
+        // 30th stamina used), so drive it from the tier.
+        // Also, it's off by one.
+        setChartAnnotation(seasonTiersReached.length - 2, lastTier[0]);
       }
     };
 
@@ -217,11 +224,21 @@
     };
 
     function setCurrencyText(elementName, used) {
-      $("#" + elementName).text(selectedEvent.seasonCurrency + ": " + used.toLocaleString());
+      if(used) {
+        $("#" + elementName).text(selectedEvent.seasonCurrency + ": " + used.toLocaleString());
+      }
+      else{
+        $("#" + elementName).text(selectedEvent.seasonCurrency + ":");
+      }
     };
 
-    function setPointsText(elementName, seasonPoints){
-      $("#" + elementName).text("Season Points: " + seasonPoints.toLocaleString());
+    function setPointsText(elementName, seasonPoints) {
+      if(seasonPoints) {
+        $("#" + elementName).text("Season Points: " + seasonPoints.toLocaleString());
+      }
+      else {
+        $("#" + elementName).text("Season Points:");
+      }
     };
 
     //https://stackoverflow.com/a/28056903
@@ -235,6 +252,31 @@
       } else {
           return "rgb(" + r + ", " + g + ", " + b + ")";
       }
+    }
+
+    function setChartAnnotation(tierNum, label){
+      if(!eventChart) {
+        return;
+      }
+      eventChart.options.plugins.annotation = {
+        annotations: {
+            lastTierLine: {
+              type: 'line',
+              xMin: tierNum,
+              xMax: tierNum,
+              borderColor: 'rgb(0, 0, 0, 0.25)',
+              borderDash: [30, 15],
+              borderWidth: 2,
+              label: {
+                content: "Last tier",
+                backgroundColor:  'rgb(0, 0, 0, 0.25)',
+                enabled: true
+              }
+            }
+          }
+      };
+             
+      eventChart.update();
     }
 
     function loadChart() {
@@ -299,8 +341,7 @@
               }
           }
        } 
-      }
-      );
+      });
     }
     </script>
 
