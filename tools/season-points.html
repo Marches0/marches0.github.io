@@ -116,7 +116,8 @@
               {
                   "name": "Penglai",
                   "seasonCurrency": "Stamina",
-                  "colour": "#ea9999"
+                  "colour": "#ea9999",
+                  "typical": 525,
                   "seasonPoints":[
                       [0, 0],
                       [45, 2000],
@@ -135,12 +136,20 @@
       
     });
 
-    $("#season-event").on("change", function(e){
+    $("#season-event").on("change", function(e) {
       loadEvent(this.value);
-      processCurrencyUsed(Number($("#currency-used").val()));
+      let currencyUsedInput = $("#currency-used");
+      currencyUsedInput.val("");
+
+      if(selectedEvent.typical) {
+        currencyUsedInput.attr("placeholder", "Typical: " + selectedEvent.typical.toLocaleString());
+      }
+      else {
+        currencyUsedInput.attr("placeholder", "");
+      }
     });
 
-    $("#currency-used").on("change", function(e){
+    $("#currency-used").on("change", function(e) {
       processCurrencyUsed(Number(this.value));
     });
 
@@ -154,6 +163,14 @@
 
       // Set chart
       loadChart();
+
+      // Reset tier entries
+      $("#next-tier-currency").text("");
+      $("#next-tier-points").text("");
+      $("#last-tier-currency").text("");
+      $("#last-tier-points").text("");
+      $("#your-points-currency").text("");
+      $("#your-points-points").text("");
     };
 
     function processCurrencyUsed(used) {

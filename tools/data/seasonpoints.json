@@ -394,6 +394,7 @@
         {
             "name": "Penglai Island Domination",
             "colour": "#fff2cc",
+            "typical": 525,
             "seasonCurrency": "Stamina",
             "seasonPoints": [
                 [
