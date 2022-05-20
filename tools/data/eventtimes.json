@@ -45,6 +45,18 @@
             ]
         },
         {
+            "serverTime": "14:00",
+            "events": [
+                "Relic chest refresh"
+            ]
+        },
+        {
+            "serverTime": "18:00",
+            "events": [
+                "Relic chest refresh"
+            ]
+        },
+        {
             "serverTime": "21:00",
             "events": [
                 "Sea Fishing ends",
