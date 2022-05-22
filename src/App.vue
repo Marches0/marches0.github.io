@@ -60,6 +60,10 @@ main {
   border-radius: 0;
 }
 
+.link-active {
+    background-color: #d2f4ea !important;
+}
+
 .btn-toggle {
   display: inline-flex;
   align-items: center;

@@ -2,16 +2,12 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHashHistory(),
+  linkActiveClass: "link-active",
   routes: [
     {
       path: '/',
       name: 'home',
-      component: import('../views/HomeView.vue')
-    },
-    {
-      path: '',
-      name: 'home',
-      component: import('../views/HomeView.vue')
+      component: () => import('../views/HomeView.vue')
     },
     {
       path: '/tips',
