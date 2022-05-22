@@ -17,6 +17,7 @@ import type { PropType } from 'vue'
 import type { SeasonEvent } from '@/types/SeasonEvent'
 import { Line } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js'
+import {hexToRGB} from "@/helpers/ColourHelper";
 import annotationPlugin from 'chartjs-plugin-annotation';
 
 // tree-shaking it seems
@@ -34,18 +35,7 @@ export default defineComponent({
         //ChartJS.plugins
     },
     methods: {
-        hexToRGB(hex: string, alpha: number | undefined) {
-            //https://stackoverflow.com/a/28056903
-            var r = parseInt(hex.slice(1, 3), 16),
-                g = parseInt(hex.slice(3, 5), 16),
-                b = parseInt(hex.slice(5, 7), 16);
-
-            if (alpha) {
-                return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
-            } else {
-                return "rgb(" + r + ", " + g + ", " + b + ")";
-            }
-        }
+        
     },
     computed: {
         chartOptions() {
@@ -134,7 +124,7 @@ export default defineComponent({
                     label: "Efficiency",
                     data: data,
                     fill: false,
-                    borderColor: this.hexToRGB(this.seasonEvent.colour, 0.5),
+                    borderColor: hexToRGB(this.seasonEvent.colour, 0.5),
                     tension: 0.001
                 }]
             };

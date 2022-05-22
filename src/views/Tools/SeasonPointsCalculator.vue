@@ -3,7 +3,7 @@
 <div class="mb-3">
     <div class="form-group">
         <label for="season-event">Event</label>
-        <select class="form-control" id="season-event" @input="eventSelected" v-model="selected">
+        <select class="form-control" id="season-event" @input="onEventSelected" v-model="selected">
             <option selected disabled>Event</option>
             <option v-for="event in seasonEvents" :key="event.name">{{event.name}}</option>
         </select>
@@ -18,7 +18,7 @@
         <div class="row">
 
             <div class="col-md-4">
-                <div class="card card-points">
+                <div class="card card-points" :style="{'border-color': cardBorderColour}">
                     <div class="card-body">
                     <h5>Last tier</h5>
                     <p id="last-tier-currency">{{lastTierCurrency}}</p>
@@ -28,7 +28,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card card-points shadow">
+                <div class="card card-points shadow" :style="{'border-color': cardBorderColour}">
                     <div class="card-body">
                     <h5>Your points</h5>
                     <p id="your-points-currency">{{totalCurrencyUsed}}</p>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card card-points">
+                <div class="card card-points" :style="{'border-color': cardBorderColour}">
                     <div class="card-body">
                     <h5>Next tier</h5>
                     <p id="next-tier-currency">{{nextTierCurrency}}</p>
@@ -55,6 +55,7 @@
 </template>
 
 <script lang="ts">
+import { hexToRGB } from "@/helpers/ColourHelper";
 import { SeasonPointIndex, type SeasonEvent } from "@/types/SeasonEvent";
 import seasonPoints from "./data/seasonPoints.json";
 import SeasonPointsChart from "./SeasonPointsChart.vue";
@@ -74,13 +75,17 @@ export default {
         eventCurrencyString(currencyAmount: number): string {
             return `${(this as any as _this).selectedEvent.seasonCurrency}: ${currencyAmount.toLocaleString()}`;
         },
-        eventSelected() {
+        onEventSelected() {
             (this as any as _this).currencyUsed = null;
         }
     },
     // depends on other stuff
     computed: {
         // Whether or not to show event-specific details.
+        cardBorderColour(){
+            let event = (this as any as _this).selectedEvent;
+            return hexToRGB(event.colour, 0.75);
+        },
         showEventDetails(): boolean {
             return (this as any as _this).selected !== null;
         },
@@ -211,6 +216,7 @@ export default {
 
 interface _this {
     selected: string;
+    cardBorderColour: string;
     currencyUsed: number | null;
     selectedEvent: SeasonEvent;
     reachedTiers: number[][];
