@@ -131,7 +131,7 @@ export default {
             return event.schedule.map(s => 
             ({
                 // Add the +1 on manually so the offset is parsed.
-                time: DateTime.fromFormat(s.time + "+1", TimeJsonFormat).plus({days: dayOffset}),
+                time: DateTime.fromFormat(s.time, TimeShortFormat, {zone:"UTC+1"}).plus({days: dayOffset}),
                 description: `${event.name} ${s.description}`,
                 day: s.day
             }));
