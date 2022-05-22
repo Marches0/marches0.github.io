@@ -5,10 +5,14 @@
             <div class="col-md-11 offset-md-2">
                 <ul class="list-unstyled">
                     <li class="mb-1 ">
-                        <router-link to="/" class="link-dark rounded btn btn-toggle btn-toggle-notreally link-dark rounded" role="button">Home</router-link>
+                        <router-link to="/" class="link-dark rounded btn btn-toggle btn-toggle-notreally link-dark rounded" role="button">
+                            <i class="bi bi-house-heart"></i>Home
+                        </router-link>
                     </li>
                     <li class="mb-1 ">
-                        <router-link to="/tips" class="link-dark rounded btn btn-toggle btn-toggle-notreally link-dark rounded" role="button">Tips</router-link>
+                        <router-link to="/tips" class="link-dark rounded btn btn-toggle btn-toggle-notreally link-dark rounded" role="button">
+                            <i class="bi bi-patch-question"></i>Tips
+                        </router-link>
                     </li>
                     <li class="mb-1">
                         <button id="guides-btn" class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#guides-collapse">
