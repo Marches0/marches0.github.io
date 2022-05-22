@@ -142,6 +142,12 @@ export default {
                 description: "Daily reset"
             });
 
+            // Kamaitachi
+            events.push({
+                time: date.set({hour: 20, minute: 0}),
+                description: "Kamaitachi"
+            });
+
             // If we're in the Clash window, add that.
             if (date.day <= 12) {
                 let clash = calendar.events.filter(e => e.name == "Sovereign Clash")[0];
