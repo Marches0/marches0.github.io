@@ -30,6 +30,11 @@ const router = createRouter({
       component: () => import('../views/Guides/RedBurrLocationGuide.vue')
     },
     {
+      path: '/tools/event-calendar',
+      name: 'event-calendar',
+      component: () => import('../views/Tools/EventCalendar.vue')
+    },
+    {
       path: '/tools/mohist-clairvoyant',
       name: 'mohist-clairvoyant',
       component: () => import('../views/Tools/MohistClairvoyant.vue')

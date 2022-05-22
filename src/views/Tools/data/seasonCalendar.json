@@ -1,0 +1,82 @@
+{
+    "rotation": [
+        [ "Curiosity", "Palace Green Ware", "Sea Fishing"],
+        [ "Scholar's Debate", "Alliance Carnival"],
+        [ "Intimacy", "Penglai Island Domination", "Jade for Beauty"],
+        [ "Savvy", "Mohist Maze", "Palace Cuju"],
+        [ "Power", "Siege", "Elite Drill"],
+        [ "Curiosity", "Loulan Dominion"],
+        [ "Naadam Fair", "Imperial Feast" ],
+        [ "Intimacy", "Penglai Island Domination", "Jade for Beauty" ],
+        [ "Savvy", "Go Match", "Palace Cuju"],
+        [ "Talent", "Loulan Siege", "Elite Drill"]
+    ],
+    "events": [
+        {
+            "name": "Sovereign Clash",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "14:00",
+                    "description": "stamina reset"
+                },
+                {
+                    "time": "22:30",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Naadam Fair",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "22:00",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Imperial Feast",
+            "schedule": [
+                {
+                    "time": "09:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:00",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Penglai Island Domination",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "22:00",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Intimacy",
+            "schedule": [
+                {
+                    "time": "23:00",
+                    "description": "ends",
+                    "day": 3
+                }
+            ]
+        }
+    ]
+}

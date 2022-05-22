@@ -32,6 +32,7 @@
                         </button>
                         <div class="collapse" id="tools-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><router-link to="/tools/event-calendar" class="link-dark rounded">Event Calendar</router-link></li>
                                 <li><router-link to="/tools/mohist-clairvoyant" class="link-dark rounded">Mohist Clairvoyant</router-link></li>
                                 <li><router-link to="/tools/season-points-calculator" class="link-dark rounded">Season Points Calculator</router-link></li>
                             </ul>

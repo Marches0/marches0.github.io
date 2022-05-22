@@ -10,11 +10,13 @@
   "dependencies": {
     "chart.js": "^3.7.1",
     "chartjs-plugin-annotation": "^1.4.0",
+    "luxon": "^2.4.0",
     "vue": "^3.2.33",
     "vue-chartjs": "^4.1.0",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
+    "@types/luxon": "^2.3.2",
     "@types/node": "^16.11.27",
     "@vitejs/plugin-vue": "^2.3.1",
     "@vue/tsconfig": "^0.1.3",
