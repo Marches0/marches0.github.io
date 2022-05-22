@@ -1,12 +1,12 @@
 {
     "rotation": [
-        [ "Curiosity", "Palace Green Ware", "Sea Fishing"],
-        [ "Scholar's Debate", "Alliance Carnival"],
-        [ "Intimacy", "Penglai Island Domination", "Jade for Beauty"],
-        [ "Savvy", "Mohist Maze", "Palace Cuju"],
-        [ "Power", "Siege", "Elite Drill"],
-        [ "Curiosity", "Loulan Dominion"],
-        [ "Naadam Fair", "Imperial Feast" ],
+        [ "Curiosity", "Palace Green Ware", "Sea Fishing" ],
+        [ null, "Scholar's Debate", "Alliance Carnival" ],
+        [ "Intimacy", "Penglai Island Domination", "Jade for Beauty"] ,
+        [ "Savvy", "Mohist Maze", "Palace Cuju" ],
+        [ "Power", "Siege", "Elite Drill" ],
+        [ "Curiosity", "Loulan Dominion", null ],
+        [ null, "Naadam Fair", "Imperial Feast" ],
         [ "Intimacy", "Penglai Island Domination", "Jade for Beauty" ],
         [ "Savvy", "Go Match", "Palace Cuju"],
         [ "Talent", "Loulan Siege", "Elite Drill"]

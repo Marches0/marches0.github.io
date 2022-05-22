@@ -5,6 +5,7 @@
     <p class="lead">Server Time (UTC + 1)</p>
 </div>
 
+<h4>Current Timers</h4>
 <table class="table table-striped">
     <thead>
         <th scope="col">Server Time</th>
@@ -18,6 +19,23 @@
             <td>{{event.localTime}}</td>
             <td>{{event.description}}</td>
             <td>{{event.occursIn}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+<h4>Season Rotation</h4>
+<table class="table table-striped">
+    <thead>
+        <th scope="col">Boost Event</th>
+        <th scope="col">Event</th>
+        <th scope="col">Minigame</th>
+    </thead>
+    <tbody id="table-body">
+        <tr v-for="eventSet in eventRotation">
+            <td>{{eventSet[0]}}</td>
+            <td>{{eventSet[1]}}</td>
+            <td>{{eventSet[2]}}</td>
         </tr>
     </tbody>
 </table>
@@ -36,7 +54,8 @@ export default {
     data() {
         return {
             serverTimeNow: "",
-            upcomingEvents: []
+            upcomingEvents: [],
+            eventRotation: []
         };
     },
     computed: {
@@ -50,6 +69,7 @@ export default {
         (this as any as _this).startServerTimeTick();
 
         (this as any as _this).upcomingEvents = (this as any as _this).getUpcomingTimers();
+        (this as any as _this).eventRotation = (this as any as _this).getSeasonRotation();
     },
     methods: {
         startServerTimeTick() : void {
@@ -60,6 +80,9 @@ export default {
         updateServerTime() {
             let serverTime = DateTime.local().toUTC(60);
             (this as any as _this).serverTimeNow = serverTime.toFormat(TimeDisplayFormat);
+        },
+        getSeasonRotation() : (string | null)[][] {
+            return calendar.rotation;
         },
         getUpcomingTimers() : eventOccurence[] {
             let serverTime = DateTime.local().toUTC(60);
@@ -95,7 +118,7 @@ export default {
 
             // Find the bin we are in based on the number of events, and how long a rotation is.
             let eventSet = eventsSinceEpoch % calendar.rotation.length;
-            let dayEventNames = calendar.rotation[eventSet];
+            let dayEventNames = calendar.rotation[eventSet].filter(e => e !== null);
 
             // Map event names to actual events
             let dayEvents = calendar.events.filter(e => dayEventNames.indexOf(e.name) !== -1);
@@ -186,12 +209,14 @@ export default {
 interface _this {
     startServerTimeTick: () => void;
     updateServerTime: () => void;
+    getSeasonRotation: () => (string | null)[][];
     getUpcomingTimers: () => eventOccurence[];
     getOneDayTimers: (daysFromToday: number) => eventOccurence[];
     getTimers: (event: event) => eventOccurence[];
     toDisplayableEvent: (event: eventOccurence) => any[];
     serverTimeNow: string;
     upcomingEvents: eventOccurence[];
+    eventRotation: (string | null)[][];
 }
 
 interface eventOccurence {
