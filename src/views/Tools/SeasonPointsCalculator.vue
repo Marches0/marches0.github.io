@@ -65,7 +65,7 @@ export default {
     components: { SeasonPointsChart },
     data() {
         return {
-            seasonEvents: seasonPoints.events,
+            seasonEvents: seasonPoints.events.sort((a, b) => (a.name.localeCompare(b.name))),
             selected: null,
             currencyUsed: 0
         };
@@ -95,7 +95,7 @@ export default {
         },
         // The earnt season points.
         totalSeasonPoints(): string {
-            if (!this.selectedEvent || !(this as any as _this).currencyUsed) {
+            if (!this.selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
                 return "";
             }
             let tiers = (this as any as _this).reachedTiers;
@@ -104,7 +104,7 @@ export default {
         },
         // The currency used.
         totalCurrencyUsed(): string {
-            if (!this.selectedEvent || !(this as any as _this).currencyUsed) {
+            if (!this.selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
                 return "";
             }
             let currencyUsed = (this as any as _this).currencyUsed;
@@ -158,7 +158,7 @@ export default {
         },
         // The tiers the user reached.
         reachedTiers(): number[][] {
-            if (!this.selectedEvent || !(this as any as _this).currencyUsed) {
+            if (!this.selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
                 return [];
             }
             let selectedEvent = (this as any as _this).selectedEvent;
@@ -198,7 +198,7 @@ export default {
         },
         // The lowest tier the user did not reach.
         nextTier(): number[] | null {
-            if (!this.selectedEvent || !(this as any as _this).currencyUsed) {
+            if (!this.selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
                 return [];
             }
             let selectedEvent = (this as any as _this).selectedEvent;
