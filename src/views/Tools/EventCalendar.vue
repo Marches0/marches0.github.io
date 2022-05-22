@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { DateTime, Duration, Settings as DateTimeSettings } from "luxon";
-import calendar from "./data/seasonCalendar.json";
+import calendar from "./data/eventCalendar.json";
 
 const TimeDisplayFormat = "HH:mm:ss";
 const TimeShortFormat = "HH:mm";
