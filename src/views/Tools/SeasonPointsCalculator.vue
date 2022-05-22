@@ -12,7 +12,7 @@
 <div id="event-parameters" v-if="showEventDetails">
     <div class="form-group">
         <label for="currency-used" id="season-currency-label">{{selectedEvent.seasonCurrency}}</label>
-        <input type="number" class="form-control" id="currency-used" v-model="currencyUsed">
+        <input type="number" class="form-control" id="currency-used" min="0" v-model="currencyUsed">
     </div>
     <div class="form-group mt-3">
         <div class="row">
