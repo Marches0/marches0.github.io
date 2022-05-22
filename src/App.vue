@@ -1,3 +1,34 @@
+<template>
+  <body>
+      <div class="row row-main">
+          <div class="col-md-1">
+            <Sidebar></Sidebar>
+          </div>
+          <div class="col-md-11">
+            <div class="container-fluid fill">
+                
+                <div class="row text-start">
+                    <div class="col-md-9 offset-md-1">
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <RouterView />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      </div>
+  </body>
+</template>
+
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+import Sidebar from '@/components/Sidebar.vue'
+</script>
+
+<style>
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
@@ -125,3 +156,4 @@ button > i.bi {
 a > i.bi {
   margin-right: 0.25rem;
 }
+</style>
