@@ -12,7 +12,7 @@
 <div id="event-parameters" v-if="showEventDetails">
     <div class="form-group">
         <label for="currency-used" id="season-currency-label">{{selectedEvent.seasonCurrency}}</label>
-        <input type="number" class="form-control" id="currency-used" min="0" v-model="currencyUsed">
+        <input type="number" class="form-control" id="currency-used" min="0" v-model="currencyUsed" :placeholder="typical">
     </div>
     <div class="form-group mt-3">
         <div class="row">
@@ -85,6 +85,12 @@ export default {
         cardBorderColour(){
             let event = (this as any as _this).selectedEvent;
             return hexToRGB(event.colour, 0.75);
+        },
+        typical(){
+            let selectedEvent = (this as any as _this).selectedEvent;
+            return selectedEvent.typical
+                ? "Typical: " + selectedEvent.typical.toLocaleString()
+                : null;
         },
         showEventDetails(): boolean {
             return (this as any as _this).selected !== null;
