@@ -3,6 +3,11 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHashHistory(),
   linkActiveClass: "link-active",
+  scrollBehavior (to, from, savedPosition) {
+    return { 
+      top: 0 // scroll back to the top after navigating
+    }
+  },
   routes: [
     {
       path: '/',
