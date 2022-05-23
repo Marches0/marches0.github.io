@@ -3,7 +3,7 @@
 <div class="mb-3">
     <div class="form-group">
         <label for="season-event">Event</label>
-        <select class="form-control" id="season-event" @input="onEventSelected" v-model="selected">
+        <select class="form-control" id="season-event" @input="onEventSelected">
             <option selected disabled>Event</option>
             <option v-for="event in seasonEvents" :key="event.name">{{event.name}}</option>
         </select>
@@ -67,7 +67,9 @@ export default {
         return {
             seasonEvents: seasonPoints.events.sort((a, b) => (a.name.localeCompare(b.name))),
             selected: null,
-            currencyUsed: 0
+            currencyUsed: 0,
+            selectedEvent: null,
+            showEventDetails: false
         };
     },
     // Methods that mutate data
@@ -77,6 +79,14 @@ export default {
         },
         onEventSelected() {
             (this as any as _this).currencyUsed = null;
+
+            // Some weird issue on mobile (Chrome Android) where the binding to the value of the select wasn't being
+            // passed through the first time (it was coming in as undefined).
+            // Rather than using a binding, grab the value ourselves from the DOM when we need to.
+            // Sucks, but here we are.
+            (this as any as _this).selected = (document!.getElementById("season-event")! as any).value!;
+            (this as any as _this).selectedEvent = seasonPoints.events.filter(e => e.name == (this as any as _this).selected)[0] as SeasonEvent;
+            (this as any as _this).showEventDetails = (this as any as _this).selectedEvent !== null && (this as any as _this).selectedEvent !== undefined;
         }
     },
     // depends on other stuff
@@ -92,16 +102,9 @@ export default {
                 ? "Typical: " + selectedEvent.typical.toLocaleString()
                 : null;
         },
-        showEventDetails(): boolean {
-            return (this as any as _this).selected !== null;
-        },
-        // The user-selected event.
-        selectedEvent() {
-            return seasonPoints.events.filter(e => e.name == (this as any as _this).selected)[0];
-        },
         // The earnt season points.
         totalSeasonPoints(): string {
-            if (!this.selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
+            if (!(this as any as _this).selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
                 return "";
             }
             let tiers = (this as any as _this).reachedTiers;
@@ -110,7 +113,7 @@ export default {
         },
         // The currency used.
         totalCurrencyUsed(): string {
-            if (!this.selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
+            if (!(this as any as _this).selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
                 return "";
             }
             let currencyUsed = (this as any as _this).currencyUsed;
@@ -164,7 +167,7 @@ export default {
         },
         // The tiers the user reached.
         reachedTiers(): number[][] {
-            if (!this.selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
+            if (!(this as any as _this).selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
                 return [];
             }
             let selectedEvent = (this as any as _this).selectedEvent;
@@ -173,6 +176,7 @@ export default {
         },
         // The last tier the user reached.
         lastTier(): number[] {
+            console.warn("lastTier");
             let tiers = (this as any as _this).reachedTiers
                 .sort(function (a, b) { return b[SeasonPointIndex.Currency] - a[SeasonPointIndex.Currency]; });
             if (tiers.length) {
@@ -180,7 +184,7 @@ export default {
             }
             return [];
         },
-        lastTierIndex() : number{
+        lastTierIndex() : number {
             let nextTier = (this as any as _this).nextTier;
             if (!nextTier?.length) {
                 return this.reachedTiers.length - 1;
@@ -204,7 +208,7 @@ export default {
         },
         // The lowest tier the user did not reach.
         nextTier(): number[] | null {
-            if (!this.selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
+            if (!(this as any as _this).selectedEvent || !(this as any as _this).currencyUsed || (this as any as _this).currencyUsed! < 0) {
                 return [];
             }
             let selectedEvent = (this as any as _this).selectedEvent;
@@ -221,6 +225,7 @@ export default {
 }
 
 interface _this {
+    showEventDetails: boolean;
     selected: string;
     cardBorderColour: string;
     currencyUsed: number | null;

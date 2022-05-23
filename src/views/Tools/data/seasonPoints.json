@@ -2784,6 +2784,7 @@
         {
             "name": "Naadam Fair",
             "colour": "#CF5A48",
+            "typical": 525,
             "seasonCurrency": "Stamina",
             "seasonPoints": [
                 [
