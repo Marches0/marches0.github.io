@@ -154,6 +154,13 @@ export default {
                 events = events.concat(this.getTimersDate(clash, date));
             }
 
+            // Dragon Treasure/Nian Expelling/Tree Prayer etc.
+            events.push({
+                time: date.set({hour: 22, minute: 0}),
+                description: "Treasure Event",
+                day: 3
+            });
+
             return events;
         },
         getTimersOffset(event: event, dayOffset: number) : eventOccurence[] {

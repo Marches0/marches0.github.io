@@ -69,6 +69,19 @@
             ]
         },
         {
+            "name": "Jade for Beauty",
+            "schedule": [
+                {
+                    "time": "09:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:00",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
             "name": "Intimacy",
             "schedule": [
                 {
