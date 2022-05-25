@@ -24,21 +24,27 @@
     </div>
 </div>
 
-<br>
-
-<div>
-  <div v-for="itemSet in soulItemsChunks">
-    <div class="row">
-        <div :class="SoulItemColumn" v-for="item in itemSet">
-            <label>{{item.name}}</label>
-            <input type="number" class="form-control" v-model="soulItemCounts[item.name].count">
+<div v-for="itemSet in soulItemsChunks">
+    <div class="row mt-2">
+        <div :class="soulItemColumn" v-for="item in itemSet">
+        <label>{{item.name}}</label>
+        <input type="number" class="form-control" v-model="soulItemCounts[item.name].count">
         </div>
     </div>
-    
-  </div>
 </div>
 
- 
+<br>
+<div class="form-group">
+    <p><i>This list is in the same order as items appear in your inventory. Some items are missing - message me if you know them. The values you enter here are saved in your browser, so you will be able to view them again later.</i></p>
+    <label>Items per row</label>
+    <select class="form-control" @input="onEventSelected" v-model="soulItemsPerRow">
+        <option>1</option>
+        <option>2</option>
+        <option selected>3</option>
+        <option>4</option>
+    </select>
+    
+</div>
  
 </template>
 
@@ -46,14 +52,9 @@
 import souls from "./data/ministerSouls.json";
 import { chunk } from "lodash"
 
-const SoulItemsPerRow = 3
-const ColumnLength = 12 / SoulItemsPerRow;
-const SoulItemColumn = "col-md-" + ColumnLength;
-
 export default {
     data() {
         return {
-            SoulItemColumn: SoulItemColumn,
             superHeroines: souls.ministers
                 .filter(m => m.type === "superHeroine")
                 .map(sh => (this as any as _this).toCountableMinister(sh)),
@@ -62,13 +63,9 @@ export default {
                 .map(sh => (this as any as _this).toCountableMinister(sh)),
             soulItems: souls.items
                 .map(i => (this as any as _this).toCountableItem(i)),
-            soulItemsChunks: chunk(
-                souls.items
-                .map(i => (this as any as _this).toCountableItem(i)),
-                SoulItemsPerRow
-            ),
             soulItemCounts: (this as any as _this).toItemCounter(souls.items),
-            possibleSouls: Object.assign({}, ...souls.ministers.map((m) => ({[m.name]: 0})))
+            possibleSouls: Object.assign({}, ...souls.ministers.map((m) => ({[m.name]: 0}))),
+            soulItemsPerRow: 3
         };
     },
     watch: {
@@ -87,6 +84,16 @@ export default {
             },
             // We need to watch the values of the dictionary
             deep: true
+        }
+    },
+    computed: {
+        soulItemColumn() {
+            return "col-md-" + (12 / (this as any as _this).soulItemsPerRow)
+        },
+        soulItemsChunks() {
+            return chunk(
+                souls.items.map(i => (this as any as _this).toCountableItem(i)),
+                (this as any as _this).soulItemsPerRow);
         }
     },
     methods: {
@@ -143,6 +150,7 @@ interface _this{
     toCountableItem:(item: Item) => CountableItem;
     soulItemCounts: { [key: string]: CountableItem };
     possibleSouls:{ [key: string]: number };
+    soulItemsPerRow: number;
 }
 
 </script>
