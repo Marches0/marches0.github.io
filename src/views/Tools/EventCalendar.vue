@@ -157,7 +157,7 @@ export default {
             // Dragon Treasure/Nian Expelling/Tree Prayer etc.
             events.push({
                 time: date.set({hour: 22, minute: 0}),
-                description: "Treasure Event",
+                description: "Treasure Event closes",
                 day: 3
             });
 

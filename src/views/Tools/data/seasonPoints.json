@@ -393,7 +393,7 @@
         },
         {
             "name": "Penglai Island Domination",
-            "colour": "#fff2cc",
+            "colour": "#268A68",
             "typical": 525,
             "seasonCurrency": "Stamina",
             "seasonPoints": [
@@ -1574,7 +1574,7 @@
         },
         {
             "name": "Jade for Beauty",
-            "colour": "#f4cccc",
+            "colour": "image.png",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -1833,7 +1833,7 @@
         },
         {
             "name": "Savvy",
-            "colour": "#6fa8dc",
+            "colour": "#5270BE",
             "seasonCurrency": "Savvy",
             "seasonPoints": [
                 [

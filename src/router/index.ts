@@ -40,6 +40,11 @@ const router = createRouter({
       component: () => import('../views/Tools/EventCalendar.vue')
     },
     {
+      path: '/tools/minister-soul-calculator',
+      name: 'minister-soul-calculator',
+      component: () => import('../views/Tools/MinisterSoulCalculator.vue')
+    },
+    {
       path: '/tools/mohist-clairvoyant',
       name: 'mohist-clairvoyant',
       component: () => import('../views/Tools/MohistClairvoyant.vue')
