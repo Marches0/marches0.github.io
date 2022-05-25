@@ -158,14 +158,18 @@ export default {
         },
         updateSoulCount(itemCount: { [key: string]: CountableItem }) {
             // Reset and recount.
-            (this as any as _this).possibleSouls = Object.assign({}, ...souls.ministers.map((m) => ({[m.name]: 0})));
+            let newSouls = Object.assign({}, ...souls.ministers.map((m) => ({[m.name]: 0})));
 
             Object.entries(itemCount).forEach(
                 ([name, item]) => {
                     item.souls.ministers.forEach(minister => {
-                        (this as any as _this).possibleSouls[minister] += item.souls.unit * item.count
+                        newSouls[minister] += item.souls.unit * item.count
                     });
             });
+
+            // Fully wipe the object so things are happily reactive - was having
+            // issues in prod builds when only updating values.
+            (this as any as _this).possibleSouls = newSouls;
         },
         displaySoulCount(souls: number) {
             return (this as any as _this).showFractionalSouls
