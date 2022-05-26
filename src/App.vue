@@ -26,6 +26,8 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Sidebar from '@/components/Sidebar.vue'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap"
 </script>
 
 <style>

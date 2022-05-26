@@ -13,7 +13,7 @@
     </div>
     <br>
     <div class="card-group">
-        <div class="card" v-for="minister in superHeroines">
+        <div class="card" v-for="minister in superHeroines" v-tooltip:bottom="getTooltip(minister)">
             <div class="card-body" :style="{'background-color': minister.colour}">            
                 <div class="card-text">
                     <h1>{{displaySoulCount(possibleSouls[minister.name])}}</h1>
@@ -36,6 +36,7 @@
 <br>
 <div class="row">
     <p><i>This list is in the same order as items appear in your inventory. Some items are missing - message me if you know them. The values you enter here are saved in your browser, so you will be able to view them again later.</i></p>
+    <p><i>Hover/tap on a minister's soul count to see the items that contributed towards it.</i></p>
     <p><i>If this isn't proof that souls have gotten out of hand, I don't know what is.</i></p>
     <div class="col-md-3">
         <div class="form-group">
@@ -59,7 +60,7 @@
 
 <script lang="ts">
 import souls from "./data/ministerSouls.json";
-import { chunk, debounce } from "lodash"
+import { chunk, debounce, sortBy } from "lodash"
 
 const StorageKey = "ministersoulcalculator-state"
 
@@ -67,11 +68,9 @@ export default {
     data() {
         return {
             superHeroines: souls.ministers
-                .filter(m => m.type === "superHeroine")
-                .map(sh => (this as any as _this).toCountableMinister(sh)),
+                .filter(m => m.type === "superHeroine"),
             starDeities: souls.ministers
-                .filter(m => m.type === "starDeity")
-                .map(sh => (this as any as _this).toCountableMinister(sh)),
+                .filter(m => m.type === "starDeity"),
 
             possibleSouls: (this as any as _this).loadInitialSoulCount(),
             soulItemCounts: (this as any as _this).toItemCounter(souls.items),
@@ -107,14 +106,6 @@ export default {
         }
     },
     methods: {
-        toCountableMinister(minister: Minister) : CountableMinister {
-            return {
-                name: minister.name,
-                colour: minister.colour,
-                type: minister.type,
-                souls: 0
-            }
-        },
         toItemCounter(items: Item[]) : { [key: string]: CountableItem } {
             var savedState = this.loadState();
 
@@ -193,6 +184,28 @@ export default {
             }
 
             return JSON.parse(json);
+        },
+        getTooltip(minister: Minister){
+            // this is so gnarly.
+            let items = Object.values((this as any as _this).soulItemCounts);
+            let ministerSoulItems = items
+                .filter(i => i.count > 0 && i.souls.ministers.indexOf(minister.name) !== -1);
+
+            // The most specific items (i.e. ones that apply to the fewest ministers) are first priority.
+            // Put shard boxes after souls because they look worse.
+            let priorityItems = sortBy(ministerSoulItems, ["souls.ministers.length", "souls.unit"], ["asc", "asc"]);
+            let tooltipHtml = "<ul>";
+
+            priorityItems.forEach(item => {
+                // Pad to line up item counts
+                // Use nonbreaking space so it renders
+                let itemCount = "" + item.count + "x "
+                tooltipHtml += "<li>" + itemCount.padEnd(5, '\xa0') + item.name + "</li>";
+            });
+
+            tooltipHtml += "</ul>";
+
+            return tooltipHtml;
         }
     }
 }
@@ -201,10 +214,6 @@ interface Minister {
     name: string;
     colour: string;
     type: string;
-}
-
-interface CountableMinister extends Minister {
-    souls: number;
 }
 
 interface Item {
@@ -226,7 +235,6 @@ interface SavedState {
 }
 
 interface _this {
-    toCountableMinister:(minister: Minister) => CountableMinister;
     toItemCounter:(items: Item[]) => { [key: string]: CountableItem };
     toCountableItem:(item: Item) => CountableItem;
     soulItemCounts: { [key: string]: CountableItem };
@@ -243,3 +251,21 @@ interface _this {
 }
 
 </script>
+<style>
+/* Scoped styles don't work with tooltips */
+.tooltip ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    max-width: none;
+    text-size-adjust: 200%;
+    font-size: larger;
+    /* Fullwidth so the item numbers line up */
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+.tooltip-inner{
+    max-width: none;
+}
+</style>
