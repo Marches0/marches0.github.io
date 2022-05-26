@@ -2,7 +2,7 @@
 
 <div class="jumbotron text-center">
     <div class="card-group">
-        <div class="card" v-for="minister in starDeities">
+        <div class="card" v-for="minister in starDeities" v-tooltip:bottom="getTooltip(minister)">
             <div class="card-body" :style="{'background-color': minister.colour}">            
                 <div class="card-text">
                     <h1>{{displaySoulCount(possibleSouls[minister.name])}}</h1>
@@ -60,7 +60,7 @@
 
 <script lang="ts">
 import souls from "./data/ministerSouls.json";
-import { chunk, debounce, sortBy } from "lodash"
+import { chunk, debounce, min, sortBy } from "lodash"
 
 const StorageKey = "ministersoulcalculator-state"
 
@@ -185,22 +185,55 @@ export default {
 
             return JSON.parse(json);
         },
-        getTooltip(minister: Minister){
-            // this is so gnarly.
-            let items = Object.values((this as any as _this).soulItemCounts);
+        getTooltip(minister: Minister) {
+            // No tooltip if there are no souls
+            if ((this as any as _this).possibleSouls[minister.name] === 0){
+                return "";
+            }
+
+            // Clone so we can fiddle with it later
+            let items: CountableItem[] = Object.values((this as any as _this).soulItemCounts)
+                .map(i => ({
+                    name: i.name,
+                    count: i.count,
+                    souls: i.souls,
+                }));
+
             let ministerSoulItems = items
                 .filter(i => i.count > 0 && i.souls.ministers.indexOf(minister.name) !== -1);
+
+            // Add soul shards as a seperate entry, so we don't have
+            // 123.4 souls making things unaligned
+            let soul = ministerSoulItems.filter(s => s.name === `${minister.name} Soul`);
+            if(soul.length && !Number.isInteger(soul[0].count)) {
+                let fullSouls = Math.floor(soul[0].count);
+                let fractionalSouls = soul[0].count - fullSouls;
+
+                soul[0].count = fullSouls;
+                ministerSoulItems.push({
+                    name: `${minister.name} Soul Shard`,
+                    count: fractionalSouls * 10,
+                    souls: soul[0].souls
+                })
+            }
 
             // The most specific items (i.e. ones that apply to the fewest ministers) are first priority.
             // Put shard boxes after souls because they look worse.
             let priorityItems = sortBy(ministerSoulItems, ["souls.ministers.length", "souls.unit"], ["asc", "asc"]);
+
+            // this is so gnarly.
             let tooltipHtml = "<ul>";
+
+            let longestPad = priorityItems
+                .map(i => i.count.toLocaleString())
+                .sort((a, b) => b.length - a.length)
+                [0].length;
 
             priorityItems.forEach(item => {
                 // Pad to line up item counts
                 // Use nonbreaking space so it renders
-                let itemCount = "" + item.count + "x "
-                tooltipHtml += "<li>" + itemCount.padEnd(5, '\xa0') + item.name + "</li>";
+                let itemCount = item.count.toString() + " ";
+                tooltipHtml += "<li>" + itemCount.padStart(longestPad + 1, '\xa0') + item.name + "</li>";
             });
 
             tooltipHtml += "</ul>";
