@@ -26,7 +26,7 @@
     <h2>Backyard Entertainment</h2>
     <p>
     It takes five seconds to cook a single side of fish. The exclamation points appear when it's about to burn, at ten seconds. You are best off counting to five yourself.
-    <img src="./img/bbq.png" style="width: 100%">
+    <img src="./img/bbq.png">
     </p>
 
     <h2>Banquets</h2>

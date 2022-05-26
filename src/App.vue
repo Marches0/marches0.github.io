@@ -160,4 +160,8 @@ button > i.bi {
 a > i.bi {
   margin-right: 0.25rem;
 }
+
+.card-body img {
+  max-width: 100%;
+}
 </style>
