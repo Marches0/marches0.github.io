@@ -8,10 +8,12 @@
 <h4>Current Timers</h4>
 <table class="table table-striped">
     <thead>
-        <th scope="col">Server Time</th>
-        <th scope="col">Your Time</th>
-        <th scope="col">Event</th>
-        <th scope="col">Occurs in...</th>
+        <tr>
+            <th scope="col">Server Time</th>
+            <th scope="col">Your Time</th>
+            <th scope="col">Event</th>
+            <th scope="col">Occurs in...</th>
+        </tr>
     </thead>
     <tbody id="table-body">
         <tr v-for="event in upcomingEventsDisplay" :key="event.name">
@@ -27,15 +29,15 @@
 <h4>Season Rotation</h4>
 <table class="table table-striped">
     <thead>
-        <th scope="col">Boost Event</th>
-        <th scope="col">Event</th>
-        <th scope="col">Minigame</th>
+        <tr>
+            <th scope="col">Boost Event</th>
+            <th scope="col">Event</th>
+            <th scope="col">Minigame</th>
+        </tr>
     </thead>
     <tbody id="table-body">
-        <tr v-for="eventSet in eventRotation">
-            <td>{{eventSet[0]}}</td>
-            <td>{{eventSet[1]}}</td>
-            <td>{{eventSet[2]}}</td>
+        <tr v-for="eventSet in eventRotation" :style="{'font-weight': eventSet.isActive ? 'bolder' : 'normal'}"> <!-- Empty string for 'normal' causes an error, but works at runtime -->
+            <td v-for="event in eventSet.events">{{event}}</td>
         </tr>
     </tbody>
 </table>
@@ -81,8 +83,29 @@ export default {
             let serverTime = DateTime.local().toUTC(60);
             (this as any as _this).serverTimeNow = serverTime.toFormat(TimeDisplayFormat);
         },
-        getSeasonRotation() : (string | null)[][] {
-            return calendar.rotation;
+        getSeasonRotation() : eventSet[] {
+            let currentEventSet = this.getActiveEventSet(DateTime.local().toUTC(60));
+            return calendar.rotation.map((e, i) => ({
+                events: e,
+                isActive: i === currentEventSet.eventSet
+            }));
+        },
+        getActiveEventSet(eventDay: DateTime) : activeEventSet {
+            // Calendar schedule starts from 4th May 2022, which was when a season
+            // started, and lasts for one season.
+            // Figure out our offset from that to determine the events.
+            const eventEpoch = DateTime.utc(2022, 5, 4).toUTC(60);
+
+            let daysSinceEpoch = Math.trunc(eventDay.diff(eventEpoch).shiftTo("days").days);
+
+            // Events last for three days, so divide by that to find our # of events since epoch
+            let eventsSinceEpoch = Math.trunc(daysSinceEpoch / 3);
+
+            // Find the bin we are in based on the number of events, and how long a rotation is.
+            return {
+                eventSet: eventsSinceEpoch % calendar.rotation.length,
+                dayOfRotation: (daysSinceEpoch % 3) + 1
+            }
         },
         getUpcomingTimers() : eventOccurence[] {
             let serverTime = DateTime.local().toUTC(60);
@@ -111,26 +134,20 @@ export default {
             // Figure out our offset from that to determine the events.
             const eventEpoch = DateTime.utc(2022, 5, 4).toUTC(60);
             let eventDay = DateTime.local().toUTC(60).plus({days: daysFromToday});
-            let daysSinceEpoch = Math.trunc(eventDay.diff(eventEpoch).shiftTo("days").days);
 
-            // Events last for three days, so divide by that to find our # of events since epoch
-            let eventsSinceEpoch = Math.trunc(daysSinceEpoch / 3);
-
-            // Find the bin we are in based on the number of events, and how long a rotation is.
-            let eventSet = eventsSinceEpoch % calendar.rotation.length;
-            let dayEventNames = calendar.rotation[eventSet].filter(e => e !== null);
+            let eventSet =this.getActiveEventSet(eventDay);
+            let dayEventNames = calendar.rotation[eventSet.eventSet].filter(e => e !== null);
 
             // Map event names to actual events
             let dayEvents = calendar.events.filter(e => dayEventNames.indexOf(e.name) !== -1);
 
             // Some events only occur on a specific day in the rotation
             // (e.g. a boost event only ends on the last day).
-            let dayOfRotation = (daysSinceEpoch % 3) + 1;
 
             return dayEvents
                 .flatMap(e => this.getTimersOffset(e, daysFromToday))
                 .concat(this.getStaticEvents(eventDay))
-                .filter(e => e.day === undefined || e.day === dayOfRotation);
+                .filter(e => e.day === undefined || e.day === eventSet.dayOfRotation);
         },
         // Events that occur outside of the season rotation.
         getStaticEvents(date: DateTime) : eventOccurence[] {
@@ -222,14 +239,14 @@ export default {
 interface _this {
     startServerTimeTick: () => void;
     updateServerTime: () => void;
-    getSeasonRotation: () => (string | null)[][];
+    getSeasonRotation: () => eventSet[];
     getUpcomingTimers: () => eventOccurence[];
     getOneDayTimers: (daysFromToday: number) => eventOccurence[];
     getTimers: (event: event) => eventOccurence[];
     toDisplayableEvent: (event: eventOccurence) => any[];
     serverTimeNow: string;
     upcomingEvents: eventOccurence[];
-    eventRotation: (string | null)[][];
+    eventRotation: eventSet[];
 }
 
 interface eventOccurence {
@@ -245,5 +262,15 @@ interface event {
         description: string;
         day?: number | undefined;
     }[];
+}
+
+interface activeEventSet {
+    eventSet: number;
+    dayOfRotation: number;
+}
+
+interface eventSet {
+    events: (string | null)[];
+    isActive: boolean;
 }
 </script>
