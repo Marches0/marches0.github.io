@@ -232,7 +232,7 @@ export default {
             priorityItems.forEach(item => {
                 // Pad to line up item counts
                 // Use nonbreaking space so it renders
-                let itemCount = item.count.toString() + " ";
+                let itemCount = item.count.toFixed(0).toString() + " ";
                 tooltipHtml += "<li>" + itemCount.padStart(longestPad + 1, '\xa0') + item.name + "</li>";
             });
 
