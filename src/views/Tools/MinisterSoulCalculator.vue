@@ -2,7 +2,7 @@
 
 <div class="jumbotron text-center">
     <div class="card-group">
-        <div class="card" v-for="minister in superHeroines">
+        <div class="card" v-for="minister in starDeities">
             <div class="card-body" :style="{'background-color': minister.colour}">            
                 <div class="card-text">
                     <h1>{{displaySoulCount(possibleSouls[minister.name])}}</h1>
@@ -13,7 +13,7 @@
     </div>
     <br>
     <div class="card-group">
-        <div class="card" v-for="minister in starDeities">
+        <div class="card" v-for="minister in superHeroines">
             <div class="card-body" :style="{'background-color': minister.colour}">            
                 <div class="card-text">
                     <h1>{{displaySoulCount(possibleSouls[minister.name])}}</h1>
