@@ -60,11 +60,20 @@
 
 <script lang="ts">
 import souls from "./data/ministerSouls.json";
-import { chunk, debounce, min, sortBy } from "lodash"
+import { chunk, debounce, sortBy } from "lodash"
 
 const StorageKey = "ministersoulcalculator-state"
 
 export default {
+    mounted(){
+        // Ideally this would be build time
+        let ministerNames = souls.ministers.map(m => m.name);
+        let itemMinisters = souls.items.flatMap(i => i.souls.ministers);
+
+        itemMinisters.filter(m => ministerNames.indexOf(m) === -1).forEach(element => {
+            console.warn("invalid: " + element);
+        });
+    },
     data() {
         return {
             superHeroines: souls.ministers
@@ -224,6 +233,7 @@ export default {
             // this is so gnarly.
             let tooltipHtml = "<ul>";
 
+            // todo use lodash min
             let longestPad = priorityItems
                 .map(i => i.count.toLocaleString())
                 .sort((a, b) => b.length - a.length)

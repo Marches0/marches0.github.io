@@ -85,7 +85,14 @@
             "name": "Star Deity Soul Selection Gift Box",
             "souls": {
                 "unit": 1,
-                "ministers":[ "Shen Zhe", "Chang Ming", "Lang Longwu", "Mu Gushi", "Arslan", "Yan Yin" ]
+                "ministers":[ "Shen Zhe", "Chang Ming", "Lang Longwu", "Mu Gushi", "Arslan", "Yan Jin" ]
+            }
+        },
+        {
+            "name": "Fantasy Man Gift Box",
+            "souls": {
+                "unit": 1,
+                "ministers":[ "Shen Zhe", "Chang Ming", "Lang Longwu", "Mu Gushi", "Arslan", "Yan Jin" ]
             }
         },
         {
