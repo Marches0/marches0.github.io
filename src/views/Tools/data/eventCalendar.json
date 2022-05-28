@@ -90,6 +90,42 @@
                     "day": 3
                 }
             ]
+        },
+        {
+            "name": "Savvy",
+            "schedule": [
+                {
+                    "time": "23:00",
+                    "description": "ends",
+                    "day": 3
+                }
+            ]
+        },
+        {
+            "name": "Go Match",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:30",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Palace Cuju",
+            "schedule": [
+                {
+                    "time": "11:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "22:30",
+                    "description": "closes"
+                }
+            ]
         }
     ]
 }
