@@ -79,9 +79,11 @@ export default {
                 (this as any as _this).updateServerTime();
             }, 1000);
         },
+        getServerTime() : DateTime{
+            return DateTime.local().toUTC(60);
+        },
         updateServerTime() {
-            let serverTime = DateTime.local().toUTC(60);
-            (this as any as _this).serverTimeNow = serverTime.toFormat(TimeDisplayFormat);
+            (this as any as _this).serverTimeNow = this.getServerTime().toFormat(TimeDisplayFormat);
         },
         getSeasonRotation() : eventSet[] {
             let currentEventSet = this.getActiveEventSet(DateTime.local().toUTC(60));
@@ -108,7 +110,7 @@ export default {
             }
         },
         getUpcomingTimers() : eventOccurence[] {
-            let serverTime = DateTime.local().toUTC(60);
+            let serverTime = this.getServerTime();
             // We care about:
             //  - Today's timers that we are yet to reach
             //  - Tomorrow's timers that will not happen today (e.g. do not have tomorrow's close if we are yet to have it today)
@@ -133,7 +135,7 @@ export default {
             // started, and lasts for one season.
             // Figure out our offset from that to determine the events.
             const eventEpoch = DateTime.utc(2022, 5, 4).toUTC(60);
-            let eventDay = DateTime.local().toUTC(60).plus({days: daysFromToday});
+            let eventDay = this.getServerTime().plus({days: daysFromToday});
 
             let eventSet =this.getActiveEventSet(eventDay);
             let dayEventNames = calendar.rotation[eventSet.eventSet].filter(e => e !== null);
@@ -203,7 +205,7 @@ export default {
                 serverTime: event.time.toFormat(TimeShortFormat),
                 localTime: event.time.setZone(DateTimeSettings.defaultZone).toFormat(TimeShortFormat),
                 description: event.description,
-                occursIn: this.toFriendlyDuration(event.time.diff(DateTime.local().toUTC(60), ["hours", "minutes"]))
+                occursIn: this.toFriendlyDuration(event.time.diff(this.getServerTime(), ["hours", "minutes"]))
             }
         },
         toFriendlyDuration(until: Duration){
