@@ -222,6 +222,20 @@
             }
         },
         {
+            "name": "Recruitment Selection Pack II",
+            "souls": {
+                "unit": 1,
+                "ministers":[ "Sikong Ying", "Shen Zhe" ]
+            }
+        },
+        {
+            "name": "Recruitment Selection Pack III",
+            "souls": {
+                "unit": 1,
+                "ministers":[ "Gu Danyang", "Mu Gushi" ]
+            }
+        },
+        {
             "name": "Recruitment Selection Pack IV",
             "souls": {
                 "unit": 1,
@@ -243,6 +257,20 @@
             }
         },
         {
+            "name": "Immortal Recruitment Gift Box I",
+            "souls": {
+                "unit": 1,
+                "ministers": [ "Zhongli Chun", "Fu Hao", "Mi Yue", "Chang Ming" ]
+            }
+        },
+        {
+            "name": "Immortal Recruitment Gift Box II",
+            "souls": {
+                "unit": 1,
+                "ministers": [ "Sikong Ying", "Shen Zhe" ]
+            }
+        },
+        {
             "name": "Immortal Recruitment Gift Box IV",
             "souls": {
                 "unit": 1,
@@ -254,6 +282,13 @@
             "souls": {
                 "unit": 0.1,
                 "ministers":[ "Zhongli Chun", "Fu Hao", "Mi Yue", "Chang Ming" ]
+            }
+        },
+        {
+            "name": "Immortal Recruitment Shard Gift Box II",
+            "souls": {
+                "unit": 0.1,
+                "ministers":[ "Sikong Ying", "Shen Zhe" ]
             }
         },
         {
