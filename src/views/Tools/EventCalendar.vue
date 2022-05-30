@@ -87,7 +87,7 @@ export default {
 
             // Have the table update every minute, in sync with the server time (i.e. when it hits 00 seconds).
             // Could do this as a separate interval, but just put it here.
-            if  (serverTime.second < 1) {
+            if (serverTime.second < 1) {
                 (this as any as _this).upcomingEvents = (this as any as _this).getUpcomingTimers();
             }
         },
@@ -231,7 +231,7 @@ export default {
                     friendlyText += ", ";
                 }
 
-                if (until.minutes === 1) {
+                if (until.minutes < 2) {
                     friendlyText += "1 minute";
                 }
                 else {

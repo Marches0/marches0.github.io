@@ -89,6 +89,10 @@
                     "description": "opens"
                 },
                 {
+                    "time": "20:10",
+                    "description": "Palace opens"
+                },
+                {
                     "time": "21:30",
                     "description": "closes"
                 }
