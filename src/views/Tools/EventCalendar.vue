@@ -82,7 +82,14 @@ export default {
             return DateTime.local().toUTC(60);
         },
         updateServerTime() {
-            (this as any as _this).serverTimeNow = this.getServerTime().toFormat(TimeDisplayFormat);
+            let serverTime = this.getServerTime();
+            (this as any as _this).serverTimeNow = serverTime.toFormat(TimeDisplayFormat);
+
+            // Have the table update every minute, in sync with the server time (i.e. when it hits 00 seconds).
+            // Could do this as a separate interval, but just put it here.
+            if  (serverTime.second < 1) {
+                (this as any as _this).upcomingEvents = (this as any as _this).getUpcomingTimers();
+            }
         },
         getSeasonRotation() : eventSet[] {
             let currentEventSet = this.getActiveEventSet(DateTime.local().toUTC(60));
