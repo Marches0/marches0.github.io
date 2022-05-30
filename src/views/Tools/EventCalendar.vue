@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody id="table-body">
-        <tr v-for="event in upcomingEventsDisplay" :key="event.name">
+        <tr v-for="event in upcomingEventsDisplay" :key="event.name" :class="event.description === 'Daily reset' ? 'daily-reset' : ''">
             <td>{{event.serverTime}}</td>
             <td>{{event.localTime}}</td>
             <td>{{event.description}}</td>
@@ -25,7 +25,6 @@
     </tbody>
 </table>
 
-<hr>
 <h4>Season Rotation</h4>
 <table class="table table-striped">
     <thead>
@@ -276,3 +275,11 @@ interface eventSet {
     isActive: boolean;
 }
 </script>
+
+<style scoped>
+tr.daily-reset {
+    /* Have a border on the day crossover */
+    border-top-width: 2px;
+    border-top-style: groove;
+}
+</style>
