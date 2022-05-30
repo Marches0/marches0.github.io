@@ -3,6 +3,7 @@
         {
             "name": "Loulan Dominion",
             "colour": "#CC5B47",
+            "type": "Event",
             "typical": 570,
             "seasonCurrency": "Stamina",
             "seasonPoints": [
@@ -179,6 +180,7 @@
         {
             "name": "Curiosity",
             "colour": "#29986E",
+            "type": "Boost Event",
             "seasonCurrency": "Rarity",
             "seasonPoints": [
                 [
@@ -394,6 +396,7 @@
         {
             "name": "Penglai Island Domination",
             "colour": "#268A68",
+            "type": "Event",
             "typical": 525,
             "seasonCurrency": "Stamina",
             "seasonPoints": [
@@ -702,6 +705,7 @@
         {
             "name": "Mohist Maze",
             "colour": "#9fc5e8",
+            "type": "Event",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -989,6 +993,7 @@
         {
             "name": "Palace Cuju",
             "colour": "#dd7e6b",
+            "type": "Minigame",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -1428,6 +1433,7 @@
         {
             "name": "Intimacy",
             "colour": "#B9498A",
+            "type": "Boost Event",
             "seasonCurrency": "Experience",
             "seasonPoints": [
                 [
@@ -1574,7 +1580,8 @@
         },
         {
             "name": "Jade for Beauty",
-            "colour": "image.png",
+            "colour": "#f4cccc",
+            "type": "Minigame",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -1834,6 +1841,7 @@
         {
             "name": "Savvy",
             "colour": "#5270BE",
+            "type": "Boost Event",
             "seasonCurrency": "Savvy",
             "seasonPoints": [
                 [
@@ -2133,6 +2141,7 @@
         {
             "name": "Siege",
             "colour": "#BB604B",
+            "type": "Event",
             "typical": 282,
             "seasonCurrency": "Stamina",
             "seasonPoints": [
@@ -2393,6 +2402,7 @@
         {
             "name": "Elite Drill",
             "colour": "#CC5846",
+            "type": "Minigame",
             "typical": 50000,
             "seasonCurrency": "Score",
             "seasonPoints": [
@@ -2657,6 +2667,7 @@
         {
             "name": "Power",
             "colour": "#BC4C4A",
+            "type": "Boost Event",
             "seasonCurrency": "Fruit",
             "seasonPoints": [
                 [
@@ -2784,6 +2795,7 @@
         {
             "name": "Naadam Fair",
             "colour": "#CF5A48",
+            "type": "Event",
             "typical": 525,
             "seasonCurrency": "Stamina",
             "seasonPoints": [
@@ -3076,6 +3088,7 @@
         {
             "name": "Imperial Feast",
             "colour": "#C65645",
+            "type": "Minigame",
             "seasonCurrency": "Score",
             "seasonPoints": [
                 [
@@ -3335,6 +3348,7 @@
         {
             "name": "Go Match",
             "colour": "#258963",
+            "type": "Event",
             "typical": 510,
             "seasonCurrency": "Stamina",
             "seasonPoints": [

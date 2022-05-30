@@ -5,7 +5,14 @@
         <label for="season-event">Event</label>
         <select class="form-control" id="season-event" @input="onEventSelected">
             <option selected disabled>Event</option>
-            <option v-for="event in seasonEvents" :key="event.name">{{event.name}}</option>
+            <!-- 
+                Label is a wild hack. We don't have a nice way to get it out of the group once we're
+                iterating, but since we know they'll all have the same type and there must be at least one.
+                just take the first.
+            -->
+            <optgroup v-for="eventGroup in getGroupedSeasonEvents()" :label="eventGroup.Key">
+                <option v-for="event in eventGroup.Events" :key="event.name">{{event.name}}</option>
+            </optgroup>
         </select>
     </div>
 </div>
@@ -59,6 +66,7 @@ import { hexToRGB } from "@/helpers/ColourHelper";
 import { SeasonPointIndex, type SeasonEvent } from "@/types/SeasonEvent";
 import seasonPoints from "./data/seasonPoints.json";
 import SeasonPointsChart from "./SeasonPointsChart.vue";
+import { chain, groupBy } from "lodash"
 
 export default {
     // Reactive data we display
@@ -78,6 +86,7 @@ export default {
             return `${(this as any as _this).selectedEvent.seasonCurrency}: ${currencyAmount.toLocaleString()}`;
         },
         onEventSelected() {
+            this.getGroupedSeasonEvents();
             (this as any as _this).currencyUsed = null;
 
             // Some weird issue on mobile (Chrome Android) where the binding to the value of the select wasn't being
@@ -87,6 +96,16 @@ export default {
             (this as any as _this).selected = (document!.getElementById("season-event")! as any).value!;
             (this as any as _this).selectedEvent = seasonPoints.events.filter(e => e.name == (this as any as _this).selected)[0] as SeasonEvent;
             (this as any as _this).showEventDetails = (this as any as _this).selectedEvent !== null && (this as any as _this).selectedEvent !== undefined;
+        },
+        getGroupedSeasonEvents() {
+            // Each group's events happen to come out alphabetically. Check to see if it one day doesn't.
+            let grouped = chain(seasonPoints.events)
+                .groupBy("type")
+                .map((value, key) => ({Key: key, Events: value}))
+                .sortBy(e => e.Key)
+                .value();
+
+            return grouped;
         }
     },
     // depends on other stuff
