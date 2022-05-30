@@ -56,6 +56,19 @@
             ]
         },
         {
+            "name": "Elite Drill",
+            "schedule": [
+                {
+                    "time": "09:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:00",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
             "name": "Penglai Island Domination",
             "schedule": [
                 {
@@ -64,6 +77,19 @@
                 },
                 {
                     "time": "22:00",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Loulan Siege",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:30",
                     "description": "closes"
                 }
             ]
@@ -93,6 +119,16 @@
         },
         {
             "name": "Savvy",
+            "schedule": [
+                {
+                    "time": "23:00",
+                    "description": "ends",
+                    "day": 3
+                }
+            ]
+        },
+        {
+            "name": "Talent",
             "schedule": [
                 {
                     "time": "23:00",
