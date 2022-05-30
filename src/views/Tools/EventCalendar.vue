@@ -102,7 +102,10 @@ export default {
             // Calendar schedule starts from 4th May 2022, which was when a season
             // started, and lasts for one season.
             // Figure out our offset from that to determine the events.
-            const eventEpoch = DateTime.utc(2022, 5, 4).toUTC(60);
+            // We need to take an hour off, because applying .toUTC(60) shifts the time forward
+            // by an hour. There might be an overload that takes the offset so it doesn't do this,
+            // but this will do.
+            const eventEpoch = DateTime.utc(2022, 5, 4).toUTC(60).minus({hour: 1});
 
             let daysSinceEpoch = Math.trunc(eventDay.diff(eventEpoch).shiftTo("days").days);
 
@@ -231,7 +234,10 @@ export default {
                     friendlyText += ", ";
                 }
 
-                if (until.minutes < 2) {
+                // When there's only minutes, the time left goes like 1.2 minutes left.
+                // To ensure we don't get the wrong numbers, use a range. Could use the rounded
+                // number later, but I've written it now and here we are.
+                if (until.minutes <= 1.1) {
                     friendlyText += "1 minute";
                 }
                 else {
