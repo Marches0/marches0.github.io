@@ -54,6 +54,11 @@ const router = createRouter({
       name: 'season-points-calculator',
       component: () => import('../views/Tools/SeasonPointsCalculator.vue')
     },
+    {
+      path: '/tools/talent-calculator',
+      name: 'talent-calculator',
+      component: () => import('../views/Tools/TalentCalculator.vue')
+    },
   ]
 })
 
