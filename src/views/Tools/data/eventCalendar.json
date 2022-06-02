@@ -166,6 +166,32 @@
                     "description": "closes"
                 }
             ]
+        },
+        {
+            "name": "Palace Green Ware",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:30",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Sea Fishing",
+            "schedule": [
+                {
+                    "time": "09:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:00",
+                    "description": "closes"
+                }
+            ]
         }
     ]
 }
