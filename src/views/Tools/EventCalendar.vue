@@ -26,7 +26,7 @@
 </table>
 
 <h4>Season Rotation</h4>
-<table class="table table-striped">
+<table class="table table-striped-double">
     <thead>
         <tr>
             <th scope="col">Boost Event</th>
@@ -295,4 +295,15 @@ tr.daily-reset {
     border-top-width: 2px;
     border-top-style: groove;
 }
+
+.table-striped-double>tbody>tr:nth-of-type(4n)>* {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color)
+}
+
+.table-striped-double>tbody>tr:nth-of-type(4n-1)>* {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color)
+}
+
 </style>
