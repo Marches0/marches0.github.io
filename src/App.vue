@@ -8,7 +8,7 @@
             <div class="container-fluid fill">
                 
                 <div class="row text-start">
-                    <div class="col-md-9 offset-md-1">
+                    <div class="col-md-10 offset-md-1">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <RouterView />
