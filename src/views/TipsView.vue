@@ -259,6 +259,7 @@
     <p>
     <ul>
         <li>Good items (Jade and Silk) come at around turn 11. By that point, you want to be at 150 capacity.</li>
+            <ul><li>From this turn onwards, the price of capacity will begin to increase.</li></ul>
         <li>The city you visit on your final turn will always buy everything you have to sell.</li>
     </ul>
     </p>
