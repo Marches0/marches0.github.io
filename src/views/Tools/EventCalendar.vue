@@ -189,6 +189,20 @@ export default {
                 day: 3
             });
 
+            // Hetu Ala: Every three weeks from the epoc (June 4th)
+            const hetuAlaEpoch = DateTime.utc(2022, 6, 4).toUTC(60);
+            console.warn(date);
+            let diff = date.diff(hetuAlaEpoch, ["weeks", "days"]);
+            if (diff.weeks % 3 === 0 && diff.days < 1) {
+                events.push({
+                    time: date.set({hour: 21, minute: 0}),
+                    description: "Hetu Ala opens"
+                });
+            }
+
+            console.warn(diff);
+
+
             return events;
         },
         getTimersOffset(event: event, dayOffset: number) : eventOccurence[] {
