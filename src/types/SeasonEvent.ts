@@ -3,6 +3,7 @@ export interface SeasonEvent {
     colour: string;
     typical: number;
     seasonCurrency: string;
+    seasonCurrencyPlural: string | undefined;
     seasonPoints: number[][];
 }
 

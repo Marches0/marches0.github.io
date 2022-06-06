@@ -18,7 +18,7 @@
 </div>
 <div id="event-parameters" v-if="showEventDetails">
     <div class="form-group">
-        <label for="currency-used" id="season-currency-label">{{selectedEvent.seasonCurrency}}</label>
+        <label for="currency-used" id="season-currency-label">{{selectedEvent.seasonCurrencyPlural || selectedEvent.seasonCurrency}}</label>
         <input type="number" class="form-control" id="currency-used" min="0" v-model="currencyUsed" :placeholder="typical">
     </div>
     <div class="form-group mt-3">
@@ -83,7 +83,8 @@ export default {
     // Methods that mutate data
     methods: {
         eventCurrencyString(currencyAmount: number): string {
-            return `${(this as any as _this).selectedEvent.seasonCurrency}: ${currencyAmount.toLocaleString()}`;
+            let event = (this as any as _this).selectedEvent;
+            return `${event.seasonCurrencyPlural || event.seasonCurrency}: ${currencyAmount.toLocaleString()}`;
         },
         onEventSelected() {
             this.getGroupedSeasonEvents();
@@ -195,7 +196,6 @@ export default {
         },
         // The last tier the user reached.
         lastTier(): number[] {
-            console.warn("lastTier");
             let tiers = (this as any as _this).reachedTiers
                 .sort(function (a, b) { return b[SeasonPointIndex.Currency] - a[SeasonPointIndex.Currency]; });
             if (tiers.length) {
