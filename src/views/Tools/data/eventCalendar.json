@@ -192,6 +192,32 @@
                     "description": "closes"
                 }
             ]
+        },
+        {
+            "name": "Alliance Carnival",
+            "schedule": [
+                {
+                    "time": "09:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:00",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Scholar's Debate",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:30",
+                    "description": "closes"
+                }
+            ]
         }
     ]
 }
