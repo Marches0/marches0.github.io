@@ -4,7 +4,7 @@
     <div class="form-group">
         <label for="season-event">Event</label>
         <select class="form-control" id="season-event" @input="onEventSelected">
-            <option selected disabled>Event</option>
+            <option selected disabled value="event">Event</option>
             <!-- 
                 Label is a wild hack. We don't have a nice way to get it out of the group once we're
                 iterating, but since we know they'll all have the same type and there must be at least one.
@@ -71,6 +71,11 @@ import { chain, groupBy } from "lodash"
 export default {
     // Reactive data we display
     components: { SeasonPointsChart },
+    mounted() {
+        // On prod (not dev!), each time after the first the calculator is opened, the dropdown
+        // will be on the first selectable item, rather than the top disabled event one.
+        (document!.getElementById("season-event")! as any).value = "event";
+    },
     data() {
         return {
             seasonEvents: seasonPoints.events.sort((a, b) => (a.name.localeCompare(b.name))),
