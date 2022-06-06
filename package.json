@@ -16,6 +16,7 @@
     "luxon": "^2.4.0",
     "vue": "^3.2.33",
     "vue-chartjs": "^4.1.0",
+    "vue-gtag": "^2.0.1",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {

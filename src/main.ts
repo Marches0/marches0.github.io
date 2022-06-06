@@ -2,9 +2,17 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { Tooltip } from 'bootstrap'
+import VueGtag from "vue-gtag";
 
-const app = createApp(App)
-app.use(router)
+const app = createApp(App);
+app.use(router);
+
+app.use(VueGtag, {
+    config: { 
+      id: "G-YL0F7L1PHH",
+    },
+  }, router);
+
 app.mount('#app')
 
 app.directive('tooltip', function(el, binding){
