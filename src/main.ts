@@ -7,11 +7,14 @@ import VueGtag from "vue-gtag";
 const app = createApp(App);
 app.use(router);
 
-app.use(VueGtag, {
+if (process.env.NODE_ENV === "production") {
+  app.use(VueGtag, 
+  {
     config: { 
       id: "G-YL0F7L1PHH",
     },
   }, router);
+}
 
 app.mount('#app')
 
