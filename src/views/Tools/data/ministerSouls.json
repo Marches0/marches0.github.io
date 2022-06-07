@@ -96,6 +96,13 @@
             }
         },
         {
+            "name": "Superheroine Soul Selection Gift Box I",
+            "souls": {
+                "unit": 1,
+                "ministers":[ "Gu Danyang", "Sikong Ying", "Qi Xiaodie", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+            }
+        },
+        {
             "name": "Superheroine Soul Selection Gift Box II",
             "souls": {
                 "unit": 1,
