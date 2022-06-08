@@ -40,6 +40,9 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="mb-1">
+                        <UpdateHistoryNavItem></UpdateHistoryNavItem>
+                    </li>
                 </ul>
 
             </div>
@@ -49,9 +52,10 @@
 
 <script lang="ts">
 import { RouterLink } from 'vue-router'
+import UpdateHistoryNavItem from "./UpdateHistory/UpdateHistoryNavItem.vue"
 
 export default {
-    components: { RouterLink },
+    components: { RouterLink, UpdateHistoryNavItem },
     data(){
         return {
             startedOnTools: false,
