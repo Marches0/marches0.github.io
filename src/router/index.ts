@@ -35,6 +35,11 @@ const router = createRouter({
       component: () => import('../views/Guides/RedBurrLocationGuide.vue')
     },
     {
+      path: '/tools/dragon-soul-calculator',
+      name: 'dragon-soul-calculator',
+      component: () => import('../views/Tools/DragonSoulCalculator.vue')
+    },
+    {
       path: '/tools/event-calendar',
       name: 'event-calendar',
       component: () => import('../views/Tools/EventCalendar.vue')

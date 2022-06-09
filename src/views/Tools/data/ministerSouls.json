@@ -1,5 +1,5 @@
 {
-    "ministers": [
+    "itemNames": [
         {
             "name": "Fu Hao",
             "colour": "#F9DC9E",
@@ -69,296 +69,296 @@
     "items": [
         {
             "name": "Superheroine Soul Selection Gift Box",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Recruitment Selection Box",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Gu Danyang", "Sikong Ying", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Gu Danyang", "Sikong Ying", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Star Deity Soul Selection Gift Box",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Shen Zhe", "Chang Ming", "Lang Longwu", "Mu Gushi", "Arslan", "Yan Jin" ]
+                "itemNames":[ "Shen Zhe", "Chang Ming", "Lang Longwu", "Mu Gushi", "Arslan", "Yan Jin" ]
             }
         },
         {
             "name": "Fantasy Man Gift Box",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Shen Zhe", "Chang Ming", "Lang Longwu", "Mu Gushi", "Arslan", "Yan Jin" ]
+                "itemNames":[ "Shen Zhe", "Chang Ming", "Lang Longwu", "Mu Gushi", "Arslan", "Yan Jin" ]
             }
         },
         {
             "name": "Superheroine Selection Gift Box I",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Gu Danyang", "Sikong Ying", "Qi Xiaodie", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Gu Danyang", "Sikong Ying", "Qi Xiaodie", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Superheroine Soul Selection Gift Box II",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Gu Danyang", "Sikong Ying", "Qi Xiaodie" ]
+                "itemNames":[ "Gu Danyang", "Sikong Ying", "Qi Xiaodie" ]
             }
         },
         {
             "name": "Superheroine Soul Shard Selection Gift Box II",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Gu Danyang", "Sikong Ying", "Qi Xiaodie" ]
+                "itemNames":[ "Gu Danyang", "Sikong Ying", "Qi Xiaodie" ]
             }
         },
         {
             "name": "Fu Hao Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Fu Hao" ]
+                "itemNames":[ "Fu Hao" ]
             }
         },
         {
             "name": "Zhongli Chun Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Zhongli Chun" ]
+                "itemNames":[ "Zhongli Chun" ]
             }
         },
         {
             "name": "Mi Yue Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Mi Yue" ]
+                "itemNames":[ "Mi Yue" ]
             }
         },
         {
             "name": "Xiao Chuo Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Xiao Chuo" ]
+                "itemNames":[ "Xiao Chuo" ]
             }
         },
         {
             "name": "Gu Danyang Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Gu Danyang" ]
+                "itemNames":[ "Gu Danyang" ]
             }
         },
         {
             "name": "Superheroine Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Sikong Ying Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Sikong Ying" ]
+                "itemNames":[ "Sikong Ying" ]
             }
         },
         {
             "name": "Qi Xiaodie Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Qi Xiaodie" ]
+                "itemNames":[ "Qi Xiaodie" ]
             }
         },
         {
             "name": "Shen Zhe Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Shen Zhe" ]
+                "itemNames":[ "Shen Zhe" ]
             }
         },
         {
             "name": "Chang Ming Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Chang Ming" ]
+                "itemNames":[ "Chang Ming" ]
             }
         },
         {
             "name": "Mu Gushi Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Mu Gushi" ]
+                "itemNames":[ "Mu Gushi" ]
             }
         },
         {
             "name": "Arslan Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Arslan" ]
+                "itemNames":[ "Arslan" ]
             }
         },
         {
             "name": "Yan Jin Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Yan Jin" ]
+                "itemNames":[ "Yan Jin" ]
             }
         },
         {
             "name": "Lang Longwu Soul",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Lang Longwu" ]
+                "itemNames":[ "Lang Longwu" ]
             }
         },
         {
             "name": "Recruitment Optional Gift Box",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Recruitment Selection Pack I",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Zhongli Chun", "Fu Hao", "Mi Yue", "Chang Ming" ]
+                "itemNames":[ "Zhongli Chun", "Fu Hao", "Mi Yue", "Chang Ming" ]
             }
         },
         {
             "name": "Recruitment Selection Pack II",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Sikong Ying", "Shen Zhe" ]
+                "itemNames":[ "Sikong Ying", "Shen Zhe" ]
             }
         },
         {
             "name": "Recruitment Selection Pack III",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Gu Danyang", "Mu Gushi" ]
+                "itemNames":[ "Gu Danyang", "Mu Gushi" ]
             }
         },
         {
             "name": "Recruitment Selection Pack IV",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Arslan", "Qi Xiaodie" ]
+                "itemNames":[ "Arslan", "Qi Xiaodie" ]
             }
         },
         {
             "name": "Recruitment Selection Pack VI",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Recruitment Shard Selection Pack VI",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Immortal Recruitment Gift Box I",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers": [ "Zhongli Chun", "Fu Hao", "Mi Yue", "Chang Ming" ]
+                "itemNames": [ "Zhongli Chun", "Fu Hao", "Mi Yue", "Chang Ming" ]
             }
         },
         {
             "name": "Immortal Recruitment Gift Box II",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers": [ "Sikong Ying", "Shen Zhe" ]
+                "itemNames": [ "Sikong Ying", "Shen Zhe" ]
             }
         },
         {
             "name": "Immortal Recruitment Gift Box IV",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Arslan", "Qi Xiaodie" ]
+                "itemNames":[ "Arslan", "Qi Xiaodie" ]
             }
         },
         {
             "name": "Immortal Recruitment Shard Gift Box I",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Zhongli Chun", "Fu Hao", "Mi Yue", "Chang Ming" ]
+                "itemNames":[ "Zhongli Chun", "Fu Hao", "Mi Yue", "Chang Ming" ]
             }
         },
         {
             "name": "Immortal Recruitment Shard Gift Box II",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Sikong Ying", "Shen Zhe" ]
+                "itemNames":[ "Sikong Ying", "Shen Zhe" ]
             }
         },
         {
             "name": "Immortal Recruitment Shard Gift Box IV",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Arslan", "Qi Xiaodie" ]
+                "itemNames":[ "Arslan", "Qi Xiaodie" ]
             }
         },
         {
             "name": "Superheroine Soul Gift Box (1)",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Superheroine Soul Gift Box (2)",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Superheroine Soul Shard Gift Box (1)",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Superheroine Soul Shard Gift Box (2)",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Superheroine Soul Gift Box III",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Superheroine Soul Shard Gift Box III",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Superheroine Soul Gift Box",
-            "souls": {
+            "items": {
                 "unit": 1,
-                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         },
         {
             "name": "Superheroine Soul Shard Gift Box",
-            "souls": {
+            "items": {
                 "unit": 0.1,
-                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
         }
     ]
