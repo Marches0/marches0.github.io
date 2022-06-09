@@ -1,6 +1,12 @@
 {
     "updates":[
         {
+            "date": "2022/06/10",
+            "updates": [
+                "Added Dragon Soul Calculator. Due to backend changes, this has wiped the existing Superheroine/Star Deity counts - sorry!"
+            ]
+        },
+        {
             "date": "2022/06/09",
             "updates": [
                 "Added update history",

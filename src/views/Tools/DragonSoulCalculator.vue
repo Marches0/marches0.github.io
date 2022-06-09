@@ -1,5 +1,5 @@
 <template>
-    <BoxCalculator :boxRewards="boxItems" :boxes="boxes"></BoxCalculator>
+    <BoxCalculator :boxRewards="boxItems" :boxes="boxes" storageKey="boxcalculator-dragonsouls"></BoxCalculator>
 </template>
 
 <script lang="ts">
