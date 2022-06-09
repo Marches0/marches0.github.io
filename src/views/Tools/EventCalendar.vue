@@ -44,8 +44,8 @@
 </template>
 
 <script lang="ts">
-import { DateTime, Duration, Settings as DateTimeSettings } from "luxon";
-import * as CalendarService from "../../services/CalendarService"
+import { Duration, Settings as DateTimeSettings } from "luxon";
+import * as CalendarService from "../../services/Calendar/CalendarService"
 
 const TimeDisplayFormat = "HH:mm:ss";
 const TimeShortFormat = "HH:mm";

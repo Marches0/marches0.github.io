@@ -1,20 +1,21 @@
 import { DateTime } from "luxon";
+import * as CalendarService from "./Calendar/CalendarService"
 
 const StorageKey = "notificationservice-desired"
 
 export class NotificationService {
-    private static pendingNotifications: {[key: string] : NodeJS.Timeout}; // um
-    private static savedNotifications: string[];
+    private static pendingNotifications: {[key: string] : number} = {};
+    private static notificationOptions: DesiredNotifications;
 
-    start() {
-        NotificationService.savedNotifications = this.loadNotifications().notifications;
-        NotificationService.savedNotifications.forEach(notification => {
+    start() {        
+        NotificationService.notificationOptions = this.loadNotifications();
+        NotificationService.notificationOptions.notifications.forEach(notification => {
             this.startNotification(notification);
         });
     }
     
     getRegisteredNotifications() : string[] {
-        return NotificationService.savedNotifications;
+        return NotificationService.notificationOptions.notifications;
     }
 
     async register(text: string) {
@@ -42,55 +43,62 @@ export class NotificationService {
             return;
         }
 
-        let when = DateTime.local(); // todo get the actual one
+        let when = CalendarService.GetNextEventOccurence(text);
+        if (when === null ){
+            return;
+        }
 
-        let notifyIn = DateTime.local().diff(when, ["milliseconds"]).milliseconds;
-        console.warn(notifyIn);
+        let warningTime = when.minus({minutes: NotificationService.notificationOptions.warningMinutes});
+        let now = DateTime.local();
+        let notifyIn = warningTime.diff(now, ["milliseconds"]).milliseconds;
+        if (notifyIn < 0){
+            // Too late. e.g. if opening the page when there is 5 mins left before the event ends. Helps with not
+            // runnining infinitely. Could add other checks, but this will do for now.
+            return;
+        }
 
         NotificationService.pendingNotifications[text] = setTimeout(() => {
             // Send it
             new Notification("CME Clairvoyant", {
-                body: text
+                body: `${text} in ${NotificationService.notificationOptions.warningMinutes} minutes`,
+                icon: "/favicon.ico"
             });
 
             // Good luck leaving this page open long enough
             // to overflow the stack
-            // Get next time & reregister
             this.startNotification(text);
             
-        }, notifyIn);
-
-        console.warn(NotificationService.pendingNotifications[text]);
-    }
-
-    private getNextTime(text: string) {
-        // read season calendar and get when it next happens
+        }, notifyIn) as unknown as number; // nodejs invading types
     }
 
     private loadNotifications() : DesiredNotifications {
         let existingJson = window.localStorage.getItem(StorageKey);
+
         return existingJson !== null
             ? JSON.parse(existingJson)
-            : { notifications:[] };
+            : 
+            {
+                notifications: [],
+                warningMinutes: 30 // default
+            };
     }
 
     private saveNotification(text: string) {
-        NotificationService.savedNotifications.push(text);
+        NotificationService.notificationOptions.notifications.push(text);
         this.updateStoredNotifications();
     }
 
     private removeNotification(text: string) {
-        NotificationService.savedNotifications = NotificationService.savedNotifications.filter(n => n !== text);
+        NotificationService.notificationOptions.notifications = NotificationService.notificationOptions.notifications.filter(n => n !== text);
        this.updateStoredNotifications();
     }
 
     private updateStoredNotifications(){
-        window.localStorage.setItem(StorageKey, JSON.stringify({
-            notifications: NotificationService.savedNotifications
-        }));
+        window.localStorage.setItem(StorageKey, JSON.stringify(NotificationService.notificationOptions));
     }
 }
 
 interface DesiredNotifications {
     notifications: string[];
+    warningMinutes: number;
 }

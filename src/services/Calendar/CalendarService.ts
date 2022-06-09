@@ -1,5 +1,5 @@
-import calendar from "../views/Tools/data/eventCalendar.json"; // todo should move the code from calendar into here?
-import { DateTime} from "luxon";
+import calendar from "./eventCalendar.json";
+import { DateTime } from "luxon";
 
 const TimeShortFormat = "HH:mm";
 
@@ -33,6 +33,24 @@ export function GetSeasonRotation() : EventSet[] {
         events: e,
         isActive: i === currentEventSet.eventSet
     }));
+}
+
+export function GetNextEventOccurence(eventName: string) : DateTime | null {
+    // Just iterate over every day until we get it.
+    // If we don't get it within 30, give up.
+    let now = GetServerTime().set({hour: 0, minute: 0, second: 0, millisecond: 0}); // 0 time components so we can base later dates off of this one without worrying about them
+    for (let i = 0; i < 30; i++) {
+        let applicableEvents = GetDayEvents(now.plus({days: i}))
+            .filter(e => e.time > now) // When checking today, ditch things that have already happened.
+            .filter(e => e.description === eventName)
+            .sort((a, b) => a.time.toUnixInteger() - b.time.toUnixInteger()); // Some events may occur many times per day - get the soonest
+
+        if (applicableEvents.length) {
+            return applicableEvents[0].time;
+        }
+    }
+
+    return null;
 }
 
 function GetDayEventSet(eventDay: DateTime) : ActiveEventSet {
