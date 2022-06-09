@@ -1845,7 +1845,7 @@
         },
         {
             "name": "Jade for Beauty",
-            "colour": "#f4cccc",
+            "colour": "##DC4D7C",
             "type": "Minigame",
             "seasonCurrency": "Score",
             "seasonPoints": [
