@@ -16,7 +16,7 @@ export function LastSeenTime() {
 
     return lastSeen === null
         ? DateTime.fromSeconds(100000).toUTC() // a long time ago
-        : DateTime.fromSeconds(parseInt(lastSeen)).toUTC;
+        : DateTime.fromSeconds(parseInt(lastSeen)).toUTC();
 }
 
 export function UpdateLastSeen() {
