@@ -346,6 +346,20 @@
                 "unit": 0.1,
                 "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
             }
+        },
+        {
+            "name": "Superheroine Soul Gift Box",
+            "souls": {
+                "unit": 1,
+                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+            }
+        },
+        {
+            "name": "Superheroine Soul Shard Gift Box",
+            "souls": {
+                "unit": 0.1,
+                "ministers":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+            }
         }
     ]
 }
