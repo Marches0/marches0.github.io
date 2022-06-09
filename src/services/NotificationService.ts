@@ -3,7 +3,7 @@ import { DateTime } from "luxon";
 const StorageKey = "notificationservice-desired"
 
 export class NotificationService {
-    private static pendingNotifications: {[key: string] : number};
+    private static pendingNotifications: {[key: string] : NodeJS.Timeout}; // um
     private static savedNotifications: string[];
 
     start() {
@@ -59,6 +59,8 @@ export class NotificationService {
             this.startNotification(text);
             
         }, notifyIn);
+
+        console.warn(NotificationService.pendingNotifications[text]);
     }
 
     private getNextTime(text: string) {
