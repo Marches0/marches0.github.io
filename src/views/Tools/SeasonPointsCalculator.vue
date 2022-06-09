@@ -4,7 +4,7 @@
     <div class="form-group">
         <label for="season-event">Event</label>
         <select class="form-control" id="season-event" @input="onEventSelected">
-            <option selected disabled>Event</option>
+            <option selected disabled value="event">Event</option>
             <!-- 
                 Label is a wild hack. We don't have a nice way to get it out of the group once we're
                 iterating, but since we know they'll all have the same type and there must be at least one.
@@ -18,7 +18,7 @@
 </div>
 <div id="event-parameters" v-if="showEventDetails">
     <div class="form-group">
-        <label for="currency-used" id="season-currency-label">{{selectedEvent.seasonCurrency}}</label>
+        <label for="currency-used" id="season-currency-label">{{selectedEvent.seasonCurrencyPlural || selectedEvent.seasonCurrency}}</label>
         <input type="number" class="form-control" id="currency-used" min="0" v-model="currencyUsed" :placeholder="typical">
     </div>
     <div class="form-group mt-3">
@@ -71,6 +71,11 @@ import { chain, groupBy } from "lodash"
 export default {
     // Reactive data we display
     components: { SeasonPointsChart },
+    mounted() {
+        // On prod (not dev!), each time after the first the calculator is opened, the dropdown
+        // will be on the first selectable item, rather than the top disabled event one.
+        (document!.getElementById("season-event")! as any).value = "event";
+    },
     data() {
         return {
             seasonEvents: seasonPoints.events.sort((a, b) => (a.name.localeCompare(b.name))),
@@ -83,7 +88,8 @@ export default {
     // Methods that mutate data
     methods: {
         eventCurrencyString(currencyAmount: number): string {
-            return `${(this as any as _this).selectedEvent.seasonCurrency}: ${currencyAmount.toLocaleString()}`;
+            let event = (this as any as _this).selectedEvent;
+            return `${event.seasonCurrencyPlural || event.seasonCurrency}: ${currencyAmount.toLocaleString()}`;
         },
         onEventSelected() {
             this.getGroupedSeasonEvents();
@@ -195,7 +201,6 @@ export default {
         },
         // The last tier the user reached.
         lastTier(): number[] {
-            console.warn("lastTier");
             let tiers = (this as any as _this).reachedTiers
                 .sort(function (a, b) { return b[SeasonPointIndex.Currency] - a[SeasonPointIndex.Currency]; });
             if (tiers.length) {
