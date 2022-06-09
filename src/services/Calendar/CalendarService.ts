@@ -94,7 +94,7 @@ function GetStaticEvents(eventDay: DateTime) {
         day: 3
     });
 
-    // Hetu Ala: Every three weeks from the epoc (June 4th)
+    // Hetu Ala: Every three weeks from the epoch (June 4th)
     const hetuAlaEpoch = DateTime.utc(2022, 6, 4).toUTC(60);
     let diff = eventDay.diff(hetuAlaEpoch, ["weeks", "days"]);
     if (diff.weeks % 3 === 0 && diff.days < 1) {

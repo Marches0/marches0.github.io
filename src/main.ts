@@ -5,6 +5,8 @@ import { Tooltip } from 'bootstrap'
 import VueGtag from "vue-gtag";
 import { NotificationService } from './services/NotificationService';
 
+new NotificationService().start();
+
 const app = createApp(App);
 app.use(router);
 
@@ -26,5 +28,3 @@ app.directive('tooltip', function(el, binding){
         html: true
     });
 });
-
-new NotificationService().start();

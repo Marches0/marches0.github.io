@@ -3,6 +3,8 @@ import * as CalendarService from "./Calendar/CalendarService"
 
 const StorageKey = "notificationservice-desired"
 
+export const NotficationSettingsModalId = "notification-settings-modal";
+
 export class NotificationService {
     private static pendingNotifications: {[key: string] : number} = {};
     private static notificationOptions: DesiredNotifications;
@@ -84,13 +86,15 @@ export class NotificationService {
     }
 
     private saveNotification(text: string) {
-        NotificationService.notificationOptions.notifications.push(text);
-        this.updateStoredNotifications();
+        if (NotificationService.notificationOptions.notifications.indexOf(text) === -1) {
+            NotificationService.notificationOptions.notifications.push(text);
+            this.updateStoredNotifications();
+        }   
     }
 
     private removeNotification(text: string) {
         NotificationService.notificationOptions.notifications = NotificationService.notificationOptions.notifications.filter(n => n !== text);
-       this.updateStoredNotifications();
+        this.updateStoredNotifications();
     }
 
     private updateStoredNotifications(){

@@ -13,6 +13,7 @@
             <th scope="col">Your Time</th>
             <th scope="col">Event</th>
             <th scope="col">Occurs in...</th>
+            <th scope="col" class="text-center">Notify me <NotificationSettingsNavItem></NotificationSettingsNavItem></th>
         </tr>
     </thead>
     <tbody id="table-body">
@@ -21,6 +22,7 @@
             <td>{{event.localTime}}</td>
             <td>{{event.description}}</td>
             <td>{{event.occursIn}}</td>
+            <td class="text-center"><input class="form-check-input" type="checkbox" @change="setNotify(($event.target as any).checked, event.description)"></td> <!-- todo line up with header -->
         </tr>
     </tbody>
 </table>
@@ -44,11 +46,14 @@
 </template>
 
 <script lang="ts">
+import { NotificationService } from "@/services/NotificationService";
+import NotificationSettingsNavItem from "../../components/Notifications/NotificationSettingsNavItem.vue"
 import { Duration, Settings as DateTimeSettings } from "luxon";
 import * as CalendarService from "../../services/Calendar/CalendarService"
 
 const TimeDisplayFormat = "HH:mm:ss";
 const TimeShortFormat = "HH:mm";
+const notificationService = new NotificationService();
 
 export default {
     data() {
@@ -58,6 +63,7 @@ export default {
             eventRotation: []
         };
     },
+    components: {NotificationSettingsNavItem},
     computed: {
         upcomingEventsDisplay() {
             var upcoming = (this as any as _this).upcomingEvents;
@@ -145,6 +151,14 @@ export default {
             }
 
             return friendlyText;
+        },
+        setNotify(enabled: boolean, notification: string) {
+            if (enabled) {
+                notificationService.register(notification);
+            }
+            else{
+                notificationService.unregister(notification);
+            }
         }
     }
 }
