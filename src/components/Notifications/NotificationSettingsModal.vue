@@ -4,7 +4,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Notification Settings</h5>
+                    <h5 class="modal-title">Notification Settings (Beta)</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -25,8 +25,13 @@
                     </ul>
 
                     <div class="alert alert-warning" role="alert" style="margin-bottom: 0px">
-                        To receive notifications, this website must be kept open. It can be left in the background (e.g. in a different tab).
-                        Needs testing for what constitues "open" on a mobile device (i.e. when does the browser go to sleep?).
+                        <p>
+                            To receive notifications, this website must be kept open. It can be left in the background (e.g. in a different tab).
+                            Needs testing for what constitues "open" on a mobile device (i.e. when does the browser go to sleep?).
+                        </p>
+                        <p style="margin-bottom: 0px">
+                            Notification delivery is best-effort, and not guaranteed.
+                        </p>
                     </div>
                 </div>
                 <div class="modal-footer">
