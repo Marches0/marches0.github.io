@@ -99,7 +99,7 @@ export class NotificationService {
             // Send it
             new Notification("CME Clairvoyant", {
                 body: `${text} in ${NotificationService.notificationOptions.warningMinutes} minutes`,
-                icon: "/favicon.ico"
+                icon: "/notification_icon.png"
             });
 
             // Good luck leaving this page open long enough

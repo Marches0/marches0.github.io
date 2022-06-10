@@ -24,6 +24,10 @@
                         </li>
                     </ul>
 
+                    <div class="alert alert-warning" role="alert" style="margin-bottom: 0px">
+                        To receive notifications, this website must be kept open. It can be left in the background (e.g. in a different tab).
+                        Needs testing for what constitues "open" on a mobile device (i.e. when does the browser go to sleep?).
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
