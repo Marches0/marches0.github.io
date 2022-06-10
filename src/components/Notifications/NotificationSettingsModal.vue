@@ -10,8 +10,8 @@
                 <div class="modal-body">
                     Timer warning:
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control">
-                        <span class="input-group-text" id="basic-addon2">minutes</span>
+                        <input type="number" class="form-control" v-model="notificationWarningMinutes">
+                        <span class="input-group-text">minutes</span>
                     </div>
                     
                     Subscribed timers:
@@ -43,6 +43,7 @@ export default {
     data() {
         return {
             modalId: NotficationSettingsModalId,
+            notificationWarningMinutes: notificationService.getNotificationWarningTime(),
             subscribedTimers: notificationService.getRegisteredNotifications(),
             updateKey: 0
         }
@@ -60,8 +61,14 @@ export default {
             (this as any).subscribedTimers = notificationService.getRegisteredNotifications();
         },
         getTimers() {
-            console.warn("hmm");
             return notificationService.getRegisteredNotifications();
+        }
+    },
+    watch: {
+        notificationWarningMinutes: {
+            handler(newValue: number, oldValue: number) {
+                notificationService.setNotificationWarningTime(newValue);
+            },
         }
     }
 }

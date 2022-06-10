@@ -7,17 +7,35 @@ export const NotficationSettingsModalId = "notification-settings-modal";
 
 export class NotificationService {
     private static pendingNotifications: {[key: string] : number} = {};
+    private static lastSentNotificationTime: {[key: string] : DateTime} = {};
     private static notificationOptions: DesiredNotifications;
 
     start() {        
         NotificationService.notificationOptions = this.loadNotifications();
         NotificationService.notificationOptions.notifications.forEach(notification => {
+            // min() doesn't really work. Use yesterday as default last.
+            NotificationService.lastSentNotificationTime[notification] = DateTime.local().minus({days: 1});
             this.startNotification(notification);
         });
     }
     
     getRegisteredNotifications() : string[] {
         return NotificationService.notificationOptions.notifications;
+    }
+
+    getNotificationWarningTime() : number {
+        return NotificationService.notificationOptions.warningMinutes;
+    }
+
+    setNotificationWarningTime(minutes: number) {
+        NotificationService.notificationOptions.warningMinutes = minutes;
+        this.updateStoredNotifications();
+
+        // Refresh the notifications
+        NotificationService.notificationOptions.notifications.forEach(notification => {
+            this.cancelPendingNotification(notification);
+            this.startNotification(notification);
+        });
     }
 
     async register(text: string) {
@@ -30,14 +48,18 @@ export class NotificationService {
     }
 
     unregister(text: string) {
+       this.cancelPendingNotification(text);
+
+        // Delete from where it's saved
+        this.removeNotification(text);
+    }
+
+    private cancelPendingNotification(text: string){
         let existing = NotificationService.pendingNotifications[text];
 
         if (text !== null && text !== undefined) {
             clearTimeout(existing);
         }
-
-        // Delete from where it's saved
-        this.removeNotification(text);
     }
 
     private startNotification(text: string) {
@@ -46,13 +68,12 @@ export class NotificationService {
         }
 
         let when = CalendarService.GetNextEventOccurence(text);
-        if (when === null ){
+        if (when === null){
             return;
         }
 
         let warningTime = when.minus({minutes: NotificationService.notificationOptions.warningMinutes});
-        let now = DateTime.local();
-        let notifyIn = warningTime.diff(now, ["milliseconds"]).milliseconds;
+        let notifyIn = warningTime.diff(DateTime.local(), ["milliseconds"]).milliseconds;
         if (notifyIn < 0){
             // Too late. e.g. if opening the page when there is 5 mins left before the event ends. Helps with not
             // runnining infinitely. Could add other checks, but this will do for now.
@@ -60,6 +81,17 @@ export class NotificationService {
         }
 
         NotificationService.pendingNotifications[text] = setTimeout(() => {
+            // If we last sent a notification within the last ten seconds
+            // and try to send another, it's probably a bug - kill it.
+            let secondsSinceLastSent = DateTime.local().diff(NotificationService.lastSentNotificationTime[text], ["seconds"]).seconds;
+            if (secondsSinceLastSent < 10) {
+                // Too soon - stopping.
+                console.error("Tried to send " + text + " too soon. Cancelling.");
+                return;
+            }
+
+            NotificationService.lastSentNotificationTime[text] = DateTime.local();
+
             // Send it
             new Notification("CME Clairvoyant", {
                 body: `${text} in ${NotificationService.notificationOptions.warningMinutes} minutes`,
