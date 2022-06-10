@@ -13,8 +13,6 @@ export class NotificationService {
     start() {        
         NotificationService.notificationOptions = this.loadNotifications();
         NotificationService.notificationOptions.notifications.forEach(notification => {
-            // min() doesn't really work. Use yesterday as default last.
-            NotificationService.lastSentNotificationTime[notification] = DateTime.local().minus({days: 1});
             this.startNotification(notification);
         });
     }
@@ -66,6 +64,12 @@ export class NotificationService {
         if (Notification.permission !== "granted") {
             return;
         }
+
+        if (NotificationService.lastSentNotificationTime[text] === undefined) {
+            // min() doesn't really work. Use yesterday as default last.
+            NotificationService.lastSentNotificationTime[text] = DateTime.local().minus({days: 1});
+        }
+        
 
         let when = CalendarService.GetNextEventOccurence(text);
         if (when === null){

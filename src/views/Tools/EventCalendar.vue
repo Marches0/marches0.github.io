@@ -16,13 +16,18 @@
             <th scope="col" class="text-center">Notify me <NotificationSettingsNavItem></NotificationSettingsNavItem></th>
         </tr>
     </thead>
+    <!-- This table gets rerendered every second for some reason, so the checked status naturally updates from the modal. Probably should fix it. -->
     <tbody id="table-body">
         <tr v-for="event in upcomingEventsDisplay" :key="event.name" :class="event.description === 'Daily reset' ? 'daily-reset' : ''">
             <td>{{event.serverTime}}</td>
             <td>{{event.localTime}}</td>
             <td>{{event.description}}</td>
             <td>{{event.occursIn}}</td>
-            <td class="text-center"><input class="form-check-input" type="checkbox" @change="setNotify(($event.target as any).checked, event.description)"></td> <!-- todo line up with header -->
+            <td class="text-center">
+                <input class="form-check-input" type="checkbox" 
+                    @change="setNotify(($event.target as any).checked, event.description)" 
+                    :checked="isChecked(event.description)">
+            </td>
         </tr>
     </tbody>
 </table>
@@ -159,6 +164,9 @@ export default {
             else{
                 notificationService.unregister(notification);
             }
+        },
+        isChecked(timerName: string) {
+            return notificationService.getRegisteredNotifications().indexOf(timerName) !== -1;
         }
     }
 }
