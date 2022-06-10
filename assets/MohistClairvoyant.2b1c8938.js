@@ -1,1 +1,0 @@
-import{_ as e,o as a,c as o,F as s,a as t}from"./index.95d6d217.js";var r="/assets/clairvoyant.6df664de.gif";const c={},n=t("p",null,[t("img",{src:r,style:{width:"70%"}})],-1),_=t("p",null,[t("a",{href:"https://www.youtube.com/watch?v=GUhVe4DHN98",target:"_blank"},"How-to")],-1);function l(i,d){return a(),o(s,null,[n,_],64)}var h=e(c,[["render",l]]);export{h as default};
