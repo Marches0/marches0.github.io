@@ -65,35 +65,35 @@
             }
         },
         {
-            "name": "True Dragon Shard Selection Gift Box III",
+            "name": "True Dragon Shard Selection Box III",
             "items": {
                 "unit": 0.1,
                 "itemNames":[ "King Arthur", "Augustus", "Napoleon" ]
             }
         },
         {
-            "name": "True Dragon Selection Gift Box IV",
+            "name": "True Dragon Selection Box IV",
             "items": {
                 "unit": 1,
                 "itemNames":[ "Nurhaci", "Shunzhi", "Kangxi", "King Arthur", "Augustus", "Napoleon" ]
             }
         },
         {
-            "name": "True Dragon Shard Selection Gift Box IV",
+            "name": "True Dragon Shard Selection Box IV",
             "items": {
                 "unit": 0.1,
                 "itemNames":[ "Nurhaci", "Shunzhi", "Kangxi", "King Arthur", "Augustus", "Napoleon" ]
             }
         },
         {
-            "name": "True Dragon Selection Gift Box V",
+            "name": "True Dragon Selection Box V",
             "items": {
                 "unit": 1,
                 "itemNames":[ "Nurhaci", "Shunzhi", "Kangxi", "King Arthur", "Augustus", "Napoleon", "Bluetooth", "Xianfeng" ]
             }
         },
         {
-            "name": "True Dragon Shard Selection Gift Box V",
+            "name": "True Dragon Shard Selection Box V",
             "items": {
                 "unit": 0.1,
                 "itemNames":[ "Nurhaci", "Shunzhi", "Kangxi", "King Arthur", "Augustus", "Napoleon", "Bluetooth", "Xianfeng" ]
