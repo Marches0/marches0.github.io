@@ -21,15 +21,13 @@
         </div>
       </div>
     </div>
-  <UpdateHistoryModal></UpdateHistoryModal>
-  <NotificationsSettingsModal></NotificationsSettingsModal>
+  <ModalContainer></ModalContainer>
   </body>
 </template>
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import UpdateHistoryModal from "./components/UpdateHistory/UpdateHistoryModal.vue"
-import NotificationsSettingsModal from "./components/Notifications/NotificationSettingsModal.vue"
+import ModalContainer from "./components/ModalContainer.vue"
 import Sidebar from '@/components/Sidebar.vue'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap"

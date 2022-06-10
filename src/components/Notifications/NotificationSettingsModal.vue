@@ -10,7 +10,7 @@
                 <div class="modal-body">
                     Timer warning:
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control" v-model="notificationWarningMinutes">
+                        <input type="number" class="form-control" v-model="notificationWarningMinutes" min="0">
                         <span class="input-group-text">minutes</span>
                     </div>
                     
@@ -67,6 +67,9 @@ export default {
     watch: {
         notificationWarningMinutes: {
             handler(newValue: number, oldValue: number) {
+                if(!Number.isInteger(newValue) || newValue < 0) {
+                    return;
+                }
                 notificationService.setNotificationWarningTime(newValue);
             },
         }
