@@ -29,6 +29,9 @@
                             To receive notifications, you must grant notification permissions to this site, and it must be kept open.
                             It can be left in the background (e.g. in a different tab). Needs testing for what constitues "open" on a mobile device (i.e. when does the browser go to sleep?).
                         </p>
+                        <p>
+                            Android Chrome is not supported.
+                        </p>
                         <p style="margin-bottom: 0px">
                             Notification delivery is best-effort, and not guaranteed.
                         </p>

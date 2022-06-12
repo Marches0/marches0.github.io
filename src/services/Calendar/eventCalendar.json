@@ -218,6 +218,19 @@
                     "description": "closes"
                 }
             ]
+        },
+        {
+            "name": "Mohist Maze",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:30",
+                    "description": "closes"
+                }
+            ]
         }
     ]
 }
