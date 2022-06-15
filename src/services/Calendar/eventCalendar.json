@@ -4,7 +4,7 @@
         [ null, "Scholar's Debate", "Alliance Carnival" ],
         [ "Intimacy", "Penglai Island Domination", "Jade for Beauty"] ,
         [ "Savvy", "Mohist Maze", "Palace Cuju" ],
-        [ "Power", "Siege", "Elite Drill" ],
+        [ "Power", "Sovereign's Pursuit", "Elite Drill" ],
         [ "Curiosity", "Loulan Dominion", null ],
         [ null, "Naadam Fair", "Imperial Feast" ],
         [ "Intimacy", "Penglai Island Domination", "Jade for Beauty" ],
@@ -228,6 +228,24 @@
                 },
                 {
                     "time": "21:30",
+                    "description": "closes"
+                }
+            ]
+        }
+        ,
+        {
+            "name": "Sovereign's Pursuit",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "20:00",
+                    "description": "Mountain Control opens"
+                },
+                {
+                    "time": "22:00",
                     "description": "closes"
                 }
             ]

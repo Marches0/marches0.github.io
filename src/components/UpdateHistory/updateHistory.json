@@ -1,6 +1,14 @@
 {
     "updates":[
         {
+            "date": "2022/06/15",
+            "updates": [
+                "Added Sovereign's Pursuit to the Season Points Calculator.",
+                "Added Sovereign's Pursuit to the Event Calendar.",
+                "Added Qianlong items to the Dragon Soul Calculator."
+            ]
+        },
+        {
             "date": "2022/06/11",
             "updates": [
                 "Added notification supprt (Beta) to the Event Calendar."
@@ -15,9 +23,9 @@
         {
             "date": "2022/06/09",
             "updates": [
-                "Added update history",
-                "Added Superheroine Soul Selection Gift Box I, Superheroine Soul Gift Box, and Superheroine Soul Shard Gift Box to Minister Soul Calculator",
-                "Added Intimacy season points up to 1,059,800 exp"
+                "Added update history.",
+                "Added Superheroine Soul Selection Gift Box I, Superheroine Soul Gift Box, and Superheroine Soul Shard Gift Box to Minister Soul Calculator.",
+                "Added Intimacy season points up to 1,059,800 exp."
             ]
         }
     ]

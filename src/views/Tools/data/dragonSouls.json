@@ -39,6 +39,11 @@
             "name": "Shunzhi",
             "colour": "#F69849",
             "type": "dragon"
+        },
+        {
+            "name": "Qianlong",
+            "colour": "#51CF60",
+            "type": "dragon"
         }
         
     ],
@@ -195,6 +200,20 @@
             "items": {
                 "unit": 0.1,
                 "itemNames":[ "Shunzhi", "Augustus" ]
+            }
+        },
+        {
+            "name": "True Dragon Soul Selection Box I",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Kangxi", "Napoleon", "Qianlong" ]
+            }
+        },
+        {
+            "name": "True Dragon Soul Shard Selection Box I",
+            "items": {
+                "unit": 0.1,
+                "itemNames":[ "Kangxi", "Napoleon", "Qianlong" ]
             }
         },
         {
