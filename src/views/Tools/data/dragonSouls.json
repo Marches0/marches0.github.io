@@ -161,6 +161,13 @@
             }
         },
         {
+            "name": "Qianlong Dragon Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Qianlong" ]
+            }
+        },
+        {
             "name": "Dragon Soul Selection Box I",
             "items": {
                 "unit": 1,
