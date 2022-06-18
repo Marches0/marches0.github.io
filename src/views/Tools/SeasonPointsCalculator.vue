@@ -5,11 +5,6 @@
         <label for="season-event">Event</label>
         <select class="form-control" id="season-event" @input="onEventSelected">
             <option selected disabled value="event">Event</option>
-            <!-- 
-                Label is a wild hack. We don't have a nice way to get it out of the group once we're
-                iterating, but since we know they'll all have the same type and there must be at least one.
-                just take the first.
-            -->
             <optgroup v-for="eventGroup in getGroupedSeasonEvents()" :label="eventGroup.Key">
                 <option v-for="event in eventGroup.Events" :key="event.name">{{event.name}}</option>
             </optgroup>
@@ -25,7 +20,7 @@
         <div class="row">
 
             <div class="col-md-4">
-                <div class="card card-points" :style="{'border-color': cardBorderColour}">
+                <div class="card card-points" :style="{'border-color': cardBorderColour}" @click="setCurrencyUsed(lastTier[0])">
                     <div class="card-body">
                     <h5>Last tier</h5>
                     <p id="last-tier-currency">{{lastTierCurrency}}</p>
@@ -45,7 +40,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card card-points" :style="{'border-color': cardBorderColour}">
+                <div class="card card-points" :style="{'border-color': cardBorderColour}" @click="setCurrencyUsed(nextTier[0])">
                     <div class="card-body">
                     <h5>Next tier</h5>
                     <p id="next-tier-currency">{{nextTierCurrency}}</p>
@@ -112,6 +107,11 @@ export default {
                 .value();
 
             return grouped;
+        },
+        setCurrencyUsed(used: number | undefined) {
+            if (used !== undefined && used > 0){
+                (this as any as _this).currencyUsed = used as number;
+            }
         }
     },
     // depends on other stuff

@@ -1,6 +1,13 @@
 {
     "updates":[
         {
+            "date": "2022/06/18",
+            "updates": [
+                "Clicking the Next/Last tier cards in the Season Point Calculator will update your amount used to that tier.",
+                "Added Immortal Recruitment III to the Minister Soul Calculator."
+            ]
+        },
+        {
             "date": "2022/06/15",
             "updates": [
                 "Added Sovereign's Pursuit to the Season Points Calculator.",

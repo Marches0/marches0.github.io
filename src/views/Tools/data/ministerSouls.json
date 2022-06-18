@@ -278,6 +278,13 @@
             }
         },
         {
+            "name": "Immortal Recruitment Gift Box III",
+            "items": {
+                "unit": 1,
+                "itemNames": [ "Gu Danyang", "Mu Gushi" ]
+            }
+        },
+        {
             "name": "Immortal Recruitment Gift Box IV",
             "items": {
                 "unit": 1,
@@ -296,6 +303,13 @@
             "items": {
                 "unit": 0.1,
                 "itemNames":[ "Sikong Ying", "Shen Zhe" ]
+            }
+        },
+        {
+            "name": "Immortal Recruitment Shard Gift Box III",
+            "items": {
+                "unit": 0.1,
+                "itemNames": [ "Gu Danyang", "Mu Gushi" ]
             }
         },
         {
