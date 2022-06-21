@@ -19,7 +19,10 @@
         {
             "name": "Kangxi",
             "colour": "#449EEF",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Sovereign Pursuit"
+            ]
         },
         {
             "name": "Xianfeng",
@@ -28,13 +31,17 @@
             "events": [
                 "Naadam Fair",
                 "Palace Green Ware",
-                "Scholar's Debate"
+                "Scholar's Debate",
+                "Mohist Maze"
             ]
         },
         {
             "name": "Napoleon",
             "colour": "#4EC06E",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Sovereign Pursuit"
+            ]
         },
         {
             "name": "Augustus",
@@ -43,7 +50,8 @@
             "events": [
                 "Naadam Fair",
                 "Palace Green Ware",
-                "Scholar's Debate"
+                "Scholar's Debate",
+                "Mohist Maze"
             ]
         },
         {
@@ -61,13 +69,17 @@
             "events": [
                 "Naadam Fair",
                 "Palace Green Ware",
-                "Scholar's Debate"
+                "Scholar's Debate",
+                "Mohist Maze"
             ]
         },
         {
             "name": "Qianlong",
             "colour": "#51CF60",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Sovereign Pursuit"
+            ]
         }
         
     ],

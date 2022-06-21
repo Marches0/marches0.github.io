@@ -30,7 +30,7 @@
 <br>
 <div class="row">
     <p><i>This list is in the same order as items appear in your inventory. Some items are missing - message me if you know them. The values you enter here are saved in your browser, so you will be able to view them again later.</i></p>
-    <p><i>Hover/tap on an item count to see the boxes that contributed towards it.</i></p>
+    <p><i>Hover/tap on an item count to see the boxes that contributed towards it, and where you can get them.</i></p>
     <div class="col-md-3">
         <div class="form-group">
             <label>Items per row</label>
