@@ -1,6 +1,12 @@
 {
     "updates":[
         {
+            "date": "2023/06/18",
+            "updates": [
+                "The Minister Soul Calculator and Dragon Soul Calculator show the events each minister's soul can be found in in the the tooltips."
+            ]
+        },
+        {
             "date": "2022/06/18",
             "updates": [
                 "Clicking the Next/Last tier cards in the Season Point Calculator will update your amount used to that tier.",

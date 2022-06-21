@@ -3,12 +3,18 @@
         {
             "name": "Bluetooth",
             "colour": "#21A187",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Loulan Dominion"
+            ]
         },
         {
             "name": "King Arthur",
             "colour": "#6275F5",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Loulan Dominion"
+            ]
         },
         {
             "name": "Kangxi",
@@ -18,7 +24,12 @@
         {
             "name": "Xianfeng",
             "colour": "#FD8A3D",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Naadam Fair",
+                "Palace Green Ware",
+                "Scholar's Debate"
+            ]
         },
         {
             "name": "Napoleon",
@@ -28,17 +39,30 @@
         {
             "name": "Augustus",
             "colour": "#E25BD4",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Naadam Fair",
+                "Palace Green Ware",
+                "Scholar's Debate"
+            ]
         },
         {
             "name": "Nurhaci",
             "colour": "#C83734",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Loulan Dominion"
+            ]
         },
         {
             "name": "Shunzhi",
             "colour": "#F69849",
-            "type": "dragon"
+            "type": "dragon",
+            "events": [
+                "Naadam Fair",
+                "Palace Green Ware",
+                "Scholar's Debate"
+            ]
         },
         {
             "name": "Qianlong",

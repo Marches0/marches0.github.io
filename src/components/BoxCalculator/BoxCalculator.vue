@@ -190,12 +190,25 @@ export default {
 
             return JSON.parse(json);
         },
-        getTooltip(minister: Reward) {
-            // No tooltip if there are no rewards
-            if ((this as any as _this).possibleRewards[minister.name] === 0){
-                return "";
+        getTooltip(reward: Reward) {
+            let tooltipHtml = "";
+            
+            if ((this as any as _this).possibleRewards[reward.name] > 0){
+                tooltipHtml += this.getBoxesTooltipSection(reward);
             }
 
+            if(reward.events) {
+                // If we already have tooltip content, add an hr.
+                if(tooltipHtml.length){
+                    tooltipHtml += "<hr>";
+                }
+
+                tooltipHtml += this.getEventsTooltipSection(reward);
+            }
+
+            return tooltipHtml;
+        },
+        getBoxesTooltipSection(reward: Reward){
             // Clone so we can fiddle with it later
             let items: CountableBox[] = Object.values((this as any as _this).boxCounts)
                 .map(i => ({
@@ -205,7 +218,7 @@ export default {
                 }));
 
             let rewardBoxes = items
-                .filter(i => i.count > 0 && i.items.itemNames.indexOf(minister.name) !== -1);
+                .filter(i => i.count > 0 && i.items.itemNames.indexOf(reward.name) !== -1);
 
             // The most specific items (i.e. ones that apply to the fewest ministers) are first priority.
             // Put shard boxes after rewards because they look worse.
@@ -230,6 +243,15 @@ export default {
             });
 
             tooltipHtml += "</ul>";
+            return tooltipHtml;
+        },
+        getEventsTooltipSection(minister: Reward){
+            let tooltipHtml = "Events:"
+            tooltipHtml += "<ul>";
+
+            minister.events.sort().forEach(event => {
+                tooltipHtml += "<li>" + event + "</li>";
+            });
 
             return tooltipHtml;
         }
@@ -240,6 +262,7 @@ interface Reward {
     name: string;
     colour: string;
     type: string;
+    events: string[];
 }
 
 interface Box {
@@ -288,6 +311,9 @@ interface _this {
     padding: 0;
     margin: 0;
     text-align: left;
+}
+
+.tooltip-inner{
     max-width: none;
     text-size-adjust: 200%;
     font-size: larger;
@@ -295,7 +321,7 @@ interface _this {
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 
-.tooltip-inner{
-    max-width: none;
+.tooltip-inner hr {
+    margin-bottom: 0.5em;
 }
 </style>

@@ -3,67 +3,120 @@
         {
             "name": "Fu Hao",
             "colour": "#F9DC9E",
-            "type": "superHeroine"
+            "type": "superHeroine",
+            "events": [
+                "Imperial Feast",
+                "Penglai Island Domination"
+            ]
         },
         {
             "name": "Zhongli Chun",
             "colour": "#A76DA8",
-            "type": "superHeroine"
+            "type": "superHeroine",
+            "events": [
+                "Naadam Fair",
+                "Jade for Beauty",
+                "Penglai Island Domination",
+                "Sovereign Clash"
+            ]
         },
         {
             "name": "Mi Yue",
             "colour": "#5CB76C",
-            "type": "superHeroine"
+            "type": "superHeroine",
+            "events": [
+                "Scholar's Debate",
+                "Palace Cuju",
+                "Penglai Island Domination",
+                "Sovereign Clash"
+            ]
         },
         {
             "name": "Xiao Chuo",
             "colour": "#4E94C0",
-            "type": "superHeroine"
+            "type": "superHeroine",
+            "events": [
+                "Season Reward",
+                "Sovereign Clash"
+            ]
         },
         {
             "name": "Sikong Ying",
             "colour": "#D4F3F0",
-            "type": "superHeroine"
+            "type": "superHeroine",
+            "events": [
+                "Go Match",
+                "Mohist Maze"
+            ]
         },
         {
             "name": "Gu Danyang",
             "colour": "#FE8BA2",
-            "type": "superHeroine"
+            "type": "superHeroine",
+            "events": [
+                "Loulan Siege",
+                "Sovereign Pursuit"
+            ]
         },
         {
             "name": "Qi Xiaodie",
             "colour": "#BEABF9",
-            "type": "superHeroine"
+            "type": "superHeroine",
+            "events": [
+                "Palace Green Ware",
+                "Loulan Dominion"
+            ]
         },
         {
             "name": "Lang Longwu",
             "colour": "#EE9906",
-            "type": "starDeity"
+            "type": "starDeity",
+            "events": [
+                "Naadam Fair"
+            ]
         },
         {
             "name": "Mu Gushi",
             "colour": "#9387E8",
-            "type": "starDeity"
+            "type": "starDeity",
+            "events": [
+                "Loulan Siege",
+                "Sovereign Pursuit"
+            ]
         },
         {
             "name": "Shen Zhe",
             "colour": "#98C4FB",
-            "type": "starDeity"
+            "type": "starDeity",
+            "events": [
+                "Go Match",
+                "Mohist Maze"
+            ]
         },
         {
             "name": "Chang Ming",
             "colour": "#E7807E",
-            "type": "starDeity"
+            "type": "starDeity",
+            "events": [
+                "Penglai Island Domination"
+            ]
         },
         {
             "name": "Arslan",
             "colour": "#ACE7E7",
-            "type": "starDeity"
+            "type": "starDeity",
+            "events": [
+                "Palace Green Ware",
+                "Loulan Dominion"
+            ]
         },
         {
             "name": "Yan Jin",
             "colour": "#F2937D",
-            "type": "starDeity"
+            "type": "starDeity",
+            "events": [
+                "Sea Trade"
+            ]
         }
     ],
     "items": [
