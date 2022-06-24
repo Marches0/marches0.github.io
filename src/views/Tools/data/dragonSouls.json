@@ -21,7 +21,8 @@
             "colour": "#449EEF",
             "type": "dragon",
             "events": [
-                "Sovereign Pursuit"
+                "Sovereign Pursuit",
+                "Palace Green Ware"
             ]
         },
         {
@@ -30,7 +31,6 @@
             "type": "dragon",
             "events": [
                 "Naadam Fair",
-                "Palace Green Ware",
                 "Scholar's Debate",
                 "Mohist Maze"
             ]
@@ -40,7 +40,8 @@
             "colour": "#4EC06E",
             "type": "dragon",
             "events": [
-                "Sovereign Pursuit"
+                "Sovereign Pursuit",
+                "Palace Green Ware"
             ]
         },
         {
@@ -49,7 +50,6 @@
             "type": "dragon",
             "events": [
                 "Naadam Fair",
-                "Palace Green Ware",
                 "Scholar's Debate",
                 "Mohist Maze"
             ]
@@ -68,7 +68,6 @@
             "type": "dragon",
             "events": [
                 "Naadam Fair",
-                "Palace Green Ware",
                 "Scholar's Debate",
                 "Mohist Maze"
             ]
@@ -78,7 +77,8 @@
             "colour": "#51CF60",
             "type": "dragon",
             "events": [
-                "Sovereign Pursuit"
+                "Sovereign Pursuit",
+                "Palace Green Ware"
             ]
         }
         

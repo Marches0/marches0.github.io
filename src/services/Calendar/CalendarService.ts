@@ -94,10 +94,8 @@ function GetStaticEvents(eventDay: DateTime) {
         day: 3
     });
 
-    // Hetu Ala: Every three weeks from the epoch (June 4th)
-    const hetuAlaEpoch = DateTime.utc(2022, 6, 4).toUTC(60);
-    let diff = eventDay.diff(hetuAlaEpoch, ["weeks", "days"]);
-    if (diff.weeks % 3 === 0 && diff.days < 1) {
+    // Hetu Ala: Final Saturday of the month
+    if (IsLastSaturdayOfMonth(eventDay)) {
         events.push({
             time: eventDay.set({hour: 21, minute: 0}),
             description: "Hetu Ala opens"
@@ -118,6 +116,17 @@ function GetEventOccurencesOnDay(event: Event, day: DateTime) : EventOccurence[]
             day: schedule.day
         }
     }
+}
+
+function IsLastSaturdayOfMonth(date: DateTime) : boolean {
+    // Saturday = 6
+    let lastDayOfMonth = date.set({day: date.daysInMonth});
+
+    // Subtract - 6 to get the difference to Saturday, but add 7 to account for the fact that we 
+    // are going backwards (e.g. Saturday -> Sunday = 1, Sunday -> Saturday = 6).
+    let lastSaturdayOfMonth = lastDayOfMonth.minus({days: Math.abs(lastDayOfMonth.weekday - 6 + 7)});
+
+    return date.day === lastSaturdayOfMonth.day;
 }
 
 export interface EventOccurence {
