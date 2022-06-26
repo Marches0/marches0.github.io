@@ -303,6 +303,13 @@
             }
         },
         {
+            "name": "Recruitment Selection Pack V",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Lang Longwu", "Zhongli Chun" ]
+            }
+        },
+        {
             "name": "Recruitment Selection Pack VI",
             "items": {
                 "unit": 1,
@@ -370,6 +377,13 @@
             "items": {
                 "unit": 0.1,
                 "itemNames":[ "Arslan", "Qi Xiaodie" ]
+            }
+        },
+        {
+            "name": "Immortal Recruitment Shard Gift Box V",
+            "items": {
+                "unit": 0.1,
+                "itemNames":[ "Lang Longwu", "Zhongli Chun" ]
             }
         },
         {
