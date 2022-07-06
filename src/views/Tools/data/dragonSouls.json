@@ -5,7 +5,9 @@
             "colour": "#21A187",
             "type": "dragon",
             "events": [
-                "Loulan Dominion"
+                "Loulan Dominion",
+                "Loulan Siege",
+                "Scholar's Debate"
             ]
         },
         {
@@ -13,7 +15,9 @@
             "colour": "#6275F5",
             "type": "dragon",
             "events": [
-                "Loulan Dominion"
+                "Loulan Dominion",
+                "Loulan Siege",
+                "Scholar's Debate"
             ]
         },
         {
@@ -31,8 +35,8 @@
             "type": "dragon",
             "events": [
                 "Naadam Fair",
-                "Scholar's Debate",
-                "Mohist Maze"
+                "Mohist Maze",
+                "Palace Green Ware"
             ]
         },
         {
@@ -50,8 +54,8 @@
             "type": "dragon",
             "events": [
                 "Naadam Fair",
-                "Scholar's Debate",
-                "Mohist Maze"
+                "Mohist Maze",
+                "Palace Green Ware"
             ]
         },
         {
@@ -59,7 +63,9 @@
             "colour": "#C83734",
             "type": "dragon",
             "events": [
-                "Loulan Dominion"
+                "Loulan Dominion",
+                "Loulan Siege",
+                "Scholar's Debate"
             ]
         },
         {
@@ -68,8 +74,8 @@
             "type": "dragon",
             "events": [
                 "Naadam Fair",
-                "Scholar's Debate",
-                "Mohist Maze"
+                "Mohist Maze",
+                "Palace Green Ware"
             ]
         },
         {
@@ -77,8 +83,7 @@
             "colour": "#51CF60",
             "type": "dragon",
             "events": [
-                "Sovereign Pursuit",
-                "Palace Green Ware"
+                "Sovereign Pursuit"
             ]
         }
         
