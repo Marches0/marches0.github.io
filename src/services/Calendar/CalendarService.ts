@@ -5,7 +5,7 @@ const TimeShortFormat = "HH:mm";
 
 // Calendar schedule starts from 4th May 2022, which was when a season
 // started, and lasts for one season.
-const EventEpoch = DateTime.utc(2022, 5, 4).toUTC(60);           
+const EventEpoch = DateTime.utc(2022, 5, 4).toUTC(60).minus({hours: 1});           
 
 export function GetServerTime() : DateTime {
     return DateTime.local().toUTC(60); 
