@@ -26,7 +26,7 @@
             "type": "dragon",
             "events": [
                 "Sovereign Pursuit",
-                "Palace Green Ware"
+                "Penglai Island Domination"
             ]
         },
         {
@@ -45,7 +45,7 @@
             "type": "dragon",
             "events": [
                 "Sovereign Pursuit",
-                "Palace Green Ware"
+                "Penglai Island Domination"
             ]
         },
         {
@@ -83,7 +83,8 @@
             "colour": "#51CF60",
             "type": "dragon",
             "events": [
-                "Sovereign Pursuit"
+                "Sovereign Pursuit",
+                "Penglai Island Domination"
             ]
         }
         
