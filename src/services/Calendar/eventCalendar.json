@@ -4,8 +4,8 @@
         [ null, "Scholar's Debate", "Imperial Feast" ],
         [ "Intimacy", "Penglai Island Domination", "Jade for Beauty"] ,
         [ "Savvy", "Mohist Maze", "Palace Cuju" ],
-        [ "Power", "Sovereign's Pursuit", "Elite Drill" ],
-        [ "Curiosity", "Loulan Dominion", null ],
+        [ "Power", "Loulan Dominion", "Elite Drill" ],
+        [ "Curiosity", "Sovereign's Pursuit", null ],
         [ null, "Naadam Fair", "Alliance Carnival" ],
         [ "Intimacy", "Penglai Island Domination", "Jade for Beauty" ],
         [ "Savvy", "Go Match", "Palace Cuju"],
@@ -77,6 +77,19 @@
                 },
                 {
                     "time": "22:00",
+                    "description": "closes"
+                }
+            ]
+        },
+        {
+            "name": "Loulan Dominion",
+            "schedule": [
+                {
+                    "time": "10:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "21:30",
                     "description": "closes"
                 }
             ]

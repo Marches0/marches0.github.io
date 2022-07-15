@@ -35,7 +35,6 @@
                                 <li><router-link to="/tools/dragon-soul-calculator" class="link-dark rounded">Dragon Soul Calculator</router-link></li>
                                 <li><router-link to="/tools/event-calendar" class="link-dark rounded">Event Calendar</router-link></li>
                                 <li><router-link to="/tools/minister-soul-calculator" class="link-dark rounded">Minister Soul Calculator</router-link></li>
-                                <li><router-link to="/tools/mohist-clairvoyant" class="link-dark rounded">Mohist Clairvoyant</router-link></li>
                                 <li><router-link to="/tools/season-points-calculator" class="link-dark rounded">Season Points Calculator</router-link></li>
                                 <li><router-link to="/tools/talent-calculator" class="link-dark rounded">Talent Calculator</router-link></li>
                             </ul>
