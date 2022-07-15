@@ -94,8 +94,10 @@ function GetStaticEvents(eventDay: DateTime) {
         day: 3
     });
 
-    // Hetu Ala: Final Saturday of the month
-    if (IsLastSaturdayOfMonth(eventDay)) {
+    // Hetu Ala: Every three weeks from epoch (25th June)
+    const hetuEpoch = DateTime.utc(2022, 6, 25).toUTC(60).minus({hours: 1});
+    let daysSinceHetu = eventDay.diff(hetuEpoch, ["days", "minutes"]).days; // By having minutes, it means our days are whole.
+    if (daysSinceHetu === 21) {
         events.push({
             time: eventDay.set({hour: 21, minute: 0}),
             description: "Hetu Ala opens"
