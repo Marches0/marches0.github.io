@@ -140,10 +140,31 @@
             }
         },
         {
-            "name": "True Dragon Shard Selection Box V",
+            "name": "True Dragon Soul Shard Selection Box V",
             "items": {
                 "unit": 0.1,
                 "itemNames":[ "Nurhaci", "Shunzhi", "Kangxi", "King Arthur", "Augustus", "Napoleon", "Bluetooth", "Xianfeng" ]
+            }
+        },
+        {
+            "name": "True Dragon Soul Shard Selection Gift Box VI",
+            "items": {
+                "unit": 0.1,
+                "itemNames":[ "Nurhaci", "Shunzhi", "Kangxi", "King Arthur", "Augustus", "Napoleon", "Bluetooth", "Xianfeng", "Qianlong" ]
+            }
+        },
+        {
+            "name": "True Dragon Soul Selection Box VI",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Nurhaci", "Shunzhi", "Kangxi", "King Arthur", "Augustus", "Napoleon", "Bluetooth", "Xianfeng", "Qianlong" ]
+            }
+        },
+        {
+            "name": "Trustworthy Mainstay Gift Box",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Nurhaci", "Shunzhi", "Kangxi", "King Arthur", "Augustus", "Napoleon", "Bluetooth", "Xianfeng", "Qianlong" ]
             }
         },
         {

@@ -1,6 +1,12 @@
 {
     "updates":[
         {
+            "date": "2022/07/20",
+            "updates": [
+                "Removed notification support from the Event Calendar - many devices are unsupported, and leaving the page open in the background prevents reliable delivery."
+            ]
+        },
+        {
             "date": "2022/06/22",
             "updates": [
                 "The Minister Soul Calculator and Dragon Soul Calculator show the events each minister's soul can be found in in the the tooltips."
