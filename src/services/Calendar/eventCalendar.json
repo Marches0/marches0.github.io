@@ -6,9 +6,9 @@
         [ "Savvy", "Mohist Maze", "Palace Cuju" ],
         [ "Power", "Loulan Dominion", "Elite Drill" ],
         [ "Curiosity", "Sovereign's Pursuit", null ],
-        [ null, "Naadam Fair", "Alliance Carnival" ],
-        [ "Intimacy", "Penglai Island Domination", "Jade for Beauty" ],
-        [ "Savvy", "Go Match", "Palace Cuju"],
+        [ null, "Naadam Fair", "Imperial Feast" ],
+        [ "Intimacy", "Go Match", "Alliance Carnival" ],
+        [ "Savvy", "CS Siege", "Palace Cuju"],
         [ "Talent", "Loulan Siege", "Elite Drill"]
     ],
     "events": [
