@@ -28,10 +28,13 @@ export function GetDayEvents(eventDay: DateTime) : EventOccurence[] {
 }
 
 export function GetSeasonRotation() : EventSet[] {
-    let currentEventSet = GetDayEventSet(GetServerTime());
+    let serverTime = GetServerTime();
+    let currentEventSet = GetDayEventSet(serverTime);
+
     return calendar.rotation.map((e, i) => ({
         events: e,
-        isActive: i === currentEventSet.eventSet
+        isActive: i === currentEventSet.eventSet,
+        next: serverTime.plus({days: GetForwardSetDifference(currentEventSet, i, calendar.rotation.length) * 3 - 1})
     }));
 }
 
@@ -120,6 +123,18 @@ function GetEventOccurencesOnDay(event: Event, day: DateTime) : EventOccurence[]
     }
 }
 
+function GetForwardSetDifference(currentEventSet: ActiveEventSet, otherEventSet: number, eventSetSize: number){
+    let difference =  otherEventSet - currentEventSet.eventSet;
+
+    // Since we want to know the next one in the future, wrap
+    // negatives around
+    if (difference <= 0){
+        difference += eventSetSize;
+    }
+
+    return difference;
+}
+
 function IsLastSaturdayOfMonth(date: DateTime) : boolean {
     // Saturday = 6
     let lastDayOfMonth = date.set({day: date.daysInMonth});
@@ -156,4 +171,5 @@ export interface ActiveEventSet {
 export interface EventSet {
     events: (string | null)[];
     isActive: boolean;
+    next: DateTime
 }

@@ -33,11 +33,13 @@
             <th scope="col">Boost Event</th>
             <th scope="col">Event</th>
             <th scope="col">Minigame</th>
+            <th scope="col">Next</th>
         </tr>
     </thead>
     <tbody id="table-body">
         <tr v-for="eventSet in eventRotation" :style="{'font-weight': eventSet.isActive ? 'bolder' : 'normal'}"> <!-- Empty string for 'normal' causes an error, but works at runtime -->
             <td v-for="event in eventSet.events">{{event}}</td>
+            <td>{{eventSet.next.toFormat(dateShortFormat)}}</td>
         </tr>
     </tbody>
 </table>
@@ -50,13 +52,15 @@ import * as CalendarService from "../../services/Calendar/CalendarService"
 
 const TimeDisplayFormat = "HH:mm:ss";
 const TimeShortFormat = "HH:mm";
+const DateShortFormat = "MMMM dd"
 
 export default {
     data() {
         return {
             serverTimeNow: "",
             upcomingEvents: [],
-            eventRotation: []
+            eventRotation: [],
+            dateShortFormat: DateShortFormat
         };
     },
     computed: {

@@ -1,6 +1,12 @@
 {
     "updates":[
         {
+            "date": "2022/07/25",
+            "updates": [
+                "Event Calendar now shows the date of future season events."
+            ]
+        },
+        {
             "date": "2022/07/20",
             "updates": [
                 "Removed notification support from the Event Calendar - many devices are unsupported, and leaving the page open in the background prevents reliable delivery."
