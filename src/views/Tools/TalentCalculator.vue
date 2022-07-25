@@ -154,3 +154,10 @@ interface _this {
     talentSources: CountablePointSource[];
 }
 </script>
+
+<style scoped>
+.card-group h2 {
+    font-size: 1.75rem !important;
+}
+
+</style>
