@@ -170,104 +170,6 @@
             }
         },
         {
-            "name": "Fu Hao Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Fu Hao" ]
-            }
-        },
-        {
-            "name": "Zhongli Chun Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Zhongli Chun" ]
-            }
-        },
-        {
-            "name": "Mi Yue Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Mi Yue" ]
-            }
-        },
-        {
-            "name": "Xiao Chuo Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Xiao Chuo" ]
-            }
-        },
-        {
-            "name": "Gu Danyang Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Gu Danyang" ]
-            }
-        },
-        {
-            "name": "Superheroine Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
-            }
-        },
-        {
-            "name": "Sikong Ying Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Sikong Ying" ]
-            }
-        },
-        {
-            "name": "Qi Xiaodie Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Qi Xiaodie" ]
-            }
-        },
-        {
-            "name": "Shen Zhe Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Shen Zhe" ]
-            }
-        },
-        {
-            "name": "Chang Ming Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Chang Ming" ]
-            }
-        },
-        {
-            "name": "Mu Gushi Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Mu Gushi" ]
-            }
-        },
-        {
-            "name": "Arslan Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Arslan" ]
-            }
-        },
-        {
-            "name": "Yan Jin Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Yan Jin" ]
-            }
-        },
-        {
-            "name": "Lang Longwu Soul",
-            "items": {
-                "unit": 1,
-                "itemNames":[ "Lang Longwu" ]
-            }
-        },
-        {
             "name": "Recruitment Optional Gift Box",
             "items": {
                 "unit": 1,
@@ -440,6 +342,104 @@
             "items": {
                 "unit": 0.1,
                 "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+            }
+        },
+        {
+            "name": "Fu Hao Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Fu Hao" ]
+            }
+        },
+        {
+            "name": "Zhongli Chun Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Zhongli Chun" ]
+            }
+        },
+        {
+            "name": "Mi Yue Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Mi Yue" ]
+            }
+        },
+        {
+            "name": "Xiao Chuo Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Xiao Chuo" ]
+            }
+        },
+        {
+            "name": "Gu Danyang Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Gu Danyang" ]
+            }
+        },
+        {
+            "name": "Superheroine Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Qi Xiaodie", "Gu Danyang", "Sikong Ying", "Xiao Chuo", "Zhongli Chun", "Fu Hao", "Mi Yue" ]
+            }
+        },
+        {
+            "name": "Sikong Ying Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Sikong Ying" ]
+            }
+        },
+        {
+            "name": "Qi Xiaodie Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Qi Xiaodie" ]
+            }
+        },
+        {
+            "name": "Shen Zhe Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Shen Zhe" ]
+            }
+        },
+        {
+            "name": "Chang Ming Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Chang Ming" ]
+            }
+        },
+        {
+            "name": "Mu Gushi Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Mu Gushi" ]
+            }
+        },
+        {
+            "name": "Arslan Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Arslan" ]
+            }
+        },
+        {
+            "name": "Yan Jin Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Yan Jin" ]
+            }
+        },
+        {
+            "name": "Lang Longwu Soul",
+            "items": {
+                "unit": 1,
+                "itemNames":[ "Lang Longwu" ]
             }
         }
     ]
