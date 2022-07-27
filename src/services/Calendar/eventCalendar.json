@@ -8,8 +8,8 @@
         [ "Curiosity", "Sovereign's Pursuit", null ],
         [ null, "Naadam Fair", "Imperial Feast" ],
         [ "Intimacy", "Go Match", "Alliance Carnival" ],
-        [ "Savvy", "CS Siege", "Palace Cuju"],
-        [ "Talent", "Loulan Siege", "Elite Drill"]
+        [ "Savvy", "CS Siege", "Elite Drill"],
+        [ "Talent", "Loulan Siege", "Palace Cuju"]
     ],
     "events": [
         {
@@ -244,8 +244,25 @@
                     "description": "closes"
                 }
             ]
-        }
-        ,
+        },
+        {
+            "name": "CS Siege",
+            "schedule": [
+                {
+                    "time": "10:30",
+                    "description": "deployment ends",
+                    "day": 1
+                },
+                {
+                    "time": "11:00",
+                    "description": "opens"
+                },
+                {
+                    "time": "22:30",
+                    "description": "closes"
+                }
+            ]
+        },
         {
             "name": "Sovereign's Pursuit",
             "schedule": [

@@ -34,7 +34,9 @@ export function GetSeasonRotation() : EventSet[] {
     return calendar.rotation.map((e, i) => ({
         events: e,
         isActive: i === currentEventSet.eventSet,
-        next: serverTime.plus({days: GetForwardSetDifference(currentEventSet, i, calendar.rotation.length) * 3 - 1})
+        // Next is the distance in events to the next occurence (e.g. next event = 1, event after = 2) * 3 (length of events)
+        // - how many days in the current event have passed - 1 (zero-indexed)
+        next: serverTime.plus({days: GetForwardSetDifference(currentEventSet, i, calendar.rotation.length) * 3 - (currentEventSet.dayOfRotation - 1)})
     }));
 }
 
