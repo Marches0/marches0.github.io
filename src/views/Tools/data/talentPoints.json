@@ -165,6 +165,29 @@
                     "step": 100
                 }
             ]
+        },
+        {
+            "name": "Qin Shi Huang Souls",
+            "colour": "#FBA43C",
+            "points": 40000,
+            "tiers": [
+                {
+                    "from": 0,
+                    "step": 1
+                }
+            ]
+        }
+        ,
+        {
+            "name": "Wu Zetian Souls",
+            "colour": "#FD83EE",
+            "points": 40000,
+            "tiers": [
+                {
+                    "from": 0,
+                    "step": 1
+                }
+            ]
         }
     ]
 }

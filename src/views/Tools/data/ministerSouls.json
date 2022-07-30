@@ -45,6 +45,7 @@
             "colour": "#D4F3F0",
             "type": "superHeroine",
             "events": [
+                "CS Siege",
                 "Go Match",
                 "Mohist Maze"
             ]
@@ -89,6 +90,7 @@
             "colour": "#98C4FB",
             "type": "starDeity",
             "events": [
+                "CS Siege",
                 "Go Match",
                 "Mohist Maze"
             ]

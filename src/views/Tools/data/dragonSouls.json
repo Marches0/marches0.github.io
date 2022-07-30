@@ -25,6 +25,7 @@
             "colour": "#449EEF",
             "type": "dragon",
             "events": [
+                "Go Match",
                 "Sovereign Pursuit",
                 "Penglai Island Domination"
             ]
@@ -34,6 +35,7 @@
             "colour": "#FD8A3D",
             "type": "dragon",
             "events": [
+                "CS Siege",
                 "Naadam Fair",
                 "Mohist Maze",
                 "Palace Green Ware"
@@ -44,6 +46,7 @@
             "colour": "#4EC06E",
             "type": "dragon",
             "events": [
+                "Go Match",
                 "Sovereign Pursuit",
                 "Penglai Island Domination"
             ]
@@ -53,6 +56,7 @@
             "colour": "#E25BD4",
             "type": "dragon",
             "events": [
+                "CS Siege",
                 "Naadam Fair",
                 "Mohist Maze",
                 "Palace Green Ware"
@@ -73,6 +77,7 @@
             "colour": "#F69849",
             "type": "dragon",
             "events": [
+                "CS Siege",
                 "Naadam Fair",
                 "Mohist Maze",
                 "Palace Green Ware"
@@ -83,6 +88,7 @@
             "colour": "#51CF60",
             "type": "dragon",
             "events": [
+                "Go Match",
                 "Sovereign Pursuit",
                 "Penglai Island Domination"
             ]
